@@ -1,8 +1,11 @@
-# Bare metal "Hello World"
+# Bare metal "Hello World"  
 
-Here is a simpliest bare metal "Hello World" example without standard AVR libraries. It is important to keep in safe port's pins, so controlling some electrical parameters is crutual, especially the value of the current. DDRD and PORTD addresses are specified in the datasheet. Use the commands below to test the project.  
+Here is a simpliest bare metal "Hello World" example without standard AVR libraries. It is important to keep in safe port's pins, so controlling some electrical parameters is crutual, especially the value of the current. DDRD and PORTD addresses are specified in the datasheet. Use the commands below to build the project and play with it.  
 
-The initial command allows, in one shot, to preprocess, compile, assemble, and link the artifact from the main.c source file:  
+First of all, check that AVR toolchain and downloader-uploader are installed on your local machine, or install them with the command below, and restart the system:  
+ `sudo apt install gcc-avr avr-libc avrdude`  
+
+The initial command allows, in one shot, to preprocess, compile, assemble, and link the artifact from the 'main.c' source file:  
  `avr-gcc -mmcu=atmega328p -Os -Wall -o main.elf main.c`  
 With the flags applied, we specify the device name, skip compiler optimization, and show all compilation warnings if any occur.  
 
@@ -34,4 +37,5 @@ See also:
 - [Section 13 "I/O-Ports"](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1182902)  
 - [Section 28.1 "Electrical Characteristics - Absolute Maximum Ratings"](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1411831)  
 - [Section 30 "Register Summary"](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1446876)  
+- [AVRDUDE - AVR Downloader/Uploader](https://www.nongnu.org/avrdude/)  
 
