@@ -17,10 +17,10 @@ clean:
 	@echo "INFO: clean finished"
 
 check:
-	avrdude -c $(PROGRAMMER) -p $(DEVICE)
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE)
 
 erease:
-	avrdude -c $(PROGRAMMER) -p $(DEVICE) -e
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -e
 
 upload:
-	avrdude -c $(PROGRAMMER) -p $(DEVICE) -U flash:w:./target/$(DESTINATION).hex:i
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -U flash:w:./target/$(DESTINATION).hex:i
