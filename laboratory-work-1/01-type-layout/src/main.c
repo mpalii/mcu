@@ -23,7 +23,7 @@ int main(void)
     size_t result;
 
     // 1 byte
-    result = sizeof(char);
+    //result = sizeof(char);
     //result = sizeof(unsigned char);
     //result = sizeof(signed char);
     
@@ -80,10 +80,11 @@ int main(void)
     //result = sizeof(uint64_t);
     //result = sizeof(int64_t);
 
-    //result = sizeof(0xFF);                // 2 bytes
-    //result = sizeof(0xffFF);              // 2 bytes
-    //result = sizeof(0xFFffFF);            // 4 bytes
-    //result = sizeof(0xFFffFFffFFffFF);    // 4 bytes
+    //result = sizeof(0xFF);                  // 2 bytes
+    //result = sizeof(0xffFF);                // 2 bytes
+    //result = sizeof(0xFFffFF);              // 4 bytes
+    //result = sizeof(0xFFffFFffFFffFF);      // 8 bytes
+    //result = sizeof(0xAAbbCCeeDDffAAbbCC);  // 8 bytes (WARNING)
 
     // Show result in port D
     PORTD = result;
