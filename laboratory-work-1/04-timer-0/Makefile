@@ -38,5 +38,5 @@ fuses-default:
 fuses-no-divider-int-rc:
 	@$(AVRDUDE) -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m 
 
-fuse-no-divider-ext-clk:
+fuses-no-divider-ext-clk:
 	@$(AVRDUDE) -U lfuse:w:0xff:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m

@@ -30,7 +30,7 @@ int main(void)
     }
 }
 
-static inline void init_io_pins(void)
+void init_io_pins(void)
 {
     // Set port D pin 0 as output
     DDRD |= _BV(DDD0);
@@ -40,7 +40,7 @@ static inline void init_io_pins(void)
 /* Set up timer 0 for 10 uSec timebase                                      */
 /* (1 (prescaler) * 80 (OCR0A + 1)) / 8_000_000 MHz = 0.00001Sec = 10uSec   */
 /****************************************************************************/
-static inline void init_timer_0(void)
+void init_timer_0(void)
 {	
     // TCCR0A – Timer/Counter0 Control Register channel A
     TCCR0A = _BV(WGM01);   // Clear Timer on Compare Match (CTC) mode (only works with channel)
