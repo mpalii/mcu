@@ -35,4 +35,4 @@ fuses-default:
 	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -U lfuse:w:0x62:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m 
 
 fuses-no-divider-int-rc:
-	@avrdude -c $(PROGRAMMER) -P $(DEVICE) -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m 
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m 
