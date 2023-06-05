@@ -16,7 +16,7 @@
 #define FREQUENCY_50kHz 50000  // 50kHz - something really fast :)
 
 /* Change the frequency for half-period calculation */
-#define HALF_PERIOD (1000000UL / (2UL * FREQUENCY_50kHz))  // us (microseconds)
+#define HALF_PERIOD (1000000UL / (2UL * FREQUENCY_1Hz))  // us (microseconds)
 
 #include <avr/io.h>
 #include <stdbool.h>      

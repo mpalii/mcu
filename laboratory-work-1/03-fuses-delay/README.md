@@ -1,13 +1,25 @@
-# Fuses, delay function
+# Fuses, delay
 
-Working mode of AVR microcontrollers is configure with so called 'Fuse Bits'.  
+Working mode of AVR microcontrollers is configured with so called 'Fuse Bits'.  
 
 The device is shipped with the internal RC oscillator at 8.0MHz and with the fuse CKDIV8 programmed, resulting in 1.0MHz system clock. Let's adjust our 'Makefile' with two more targets 'fuses-default', which resets fuse bits to the initial state, and 'fuses-no-divider-int-rc', which keeps internal RC Oscillator as a source of pulses, but disables clock divider bit, and MCU will be configured for the 8MHz frequency.
 
 There are two approaches to work with time intervals in microcontrollers: software and hardware.  
-Software approach based on the using of `nop` instruction in loops (to form delays), hardware approach instead uses built-in hardware timer-counters.  
+Software approach based on the dummy moving of an instruction pointer in loops (to form delays), hardware approach instead uses built-in hardware timer-counters.  
 
-Check the real frequencies on the pin 0 of port D using oscilloscope. After testing the 50kHz take a look at the assembler listing, in particularly `<main>` section.  
+First of all disable internal clock divider with:  
+`make fuses-no-divider-int-rc`  
+
+Then, check the real frequencies on the pin 0 of port D using oscilloscope and write down the actual results. Here is some values of measurement:  
+|**Expected frequency**  |**Actual frequency**    |
+|:---------------------|:--------------|
+|1Hz    |1.0Hz   |
+|24Hz   |24.0-24.1Hz   |
+|50Hz   |50.1-50.2Hz   |
+|240Hz  |241Hz   |
+|50kHz  |47.2-47.3kHz|
+
+You have to see that some values are not very precise, especially when generating 50kHz signal. After testing the 50kHz take a look at the assembler listing, in particularly `<main>` section.  
 
 ```assembler
 00000080 <main>:
