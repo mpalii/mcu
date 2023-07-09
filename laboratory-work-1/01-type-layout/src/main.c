@@ -80,6 +80,10 @@ int main(void)
     //result = sizeof(uint64_t);
     //result = sizeof(int64_t);
 
+    // 2 bytes
+    //enum EState{STATE1, STATE2, STATE3};
+    //result = sizeof(STATE1);
+
     //result = sizeof(0xFF);                  // 2 bytes
     //result = sizeof(0xffFF);                // 2 bytes
     //result = sizeof(0xFFffFF);              // 4 bytes
