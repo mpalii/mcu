@@ -1,0 +1,39 @@
+/**
+ * @author Maksym Palii
+ * @brief GPIO driver for ATmega328P
+ * @version 1.0
+ * 
+ * Inspired by Niklas Nilsson 
+ * @link https://github.com/niklasab
+ * @link https://www.artfulbytes.com
+ * @link https://www.youtube.com/@artfulbytes
+*/
+
+#include "gpio.h"
+
+void gpio_init(void)
+{
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_01);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_02);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_03);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_04);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_05);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_06);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_07);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_08);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_09);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_10);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_11);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_12);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_13);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_14);
+    // _GPIO_UNUSED_15 - RESET
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_16);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_17);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_18);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_19);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_20);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_21);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_22);
+    GPIO_SET_OUTPUT(_GPIO_UNUSED_23);
+}

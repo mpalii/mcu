@@ -1,0 +1,37 @@
+# Makefile
+DESTINATION  = firmware
+DEVICE       = atmega328p
+PROGRAMMER   = usbasp-clone
+AVRDUDE      = avrdude -c $(PROGRAMMER) -p $(DEVICE)
+
+default: build
+
+build: clean
+	@mkdir target
+	@avr-gcc -mmcu=$(DEVICE) -Os -Wall -c ./src/drivers/gpio.c -o ./target/gpio.o
+	@avr-gcc -mmcu=$(DEVICE) -Os -Wall -c ./src/main.c -o ./target/main.o
+	@avr-gcc -mmcu=$(DEVICE) -Os -Wall -o ./target/$(DESTINATION).elf ./target/main.o ./target/gpio.o
+	@avr-objcopy --input-target elf32-avr --output-target ihex --verbose ./target/$(DESTINATION).elf ./target/$(DESTINATION).hex
+	@echo "INFO: build finished"
+
+clean:
+	@rm --force --recursive --verbose ./target
+	@echo "INFO: clean finished"
+
+check:
+	@$(AVRDUDE)
+	
+erease:
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -e
+
+upload:
+	@$(AVRDUDE) -U flash:w:./target/$(DESTINATION).hex:i
+
+disasm: ./target/$(DESTINATION).elf
+	@avr-objdump -d ./target/$(DESTINATION).elf
+
+size:	./target/$(DESTINATION).elf
+	@avr-size --format=AVR --mcu=$(DEVICE) ./target/$(DESTINATION).elf 
+
+fuses-no-divider-int-rc:
+	@avrdude -c $(PROGRAMMER) -p $(DEVICE) -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m 
