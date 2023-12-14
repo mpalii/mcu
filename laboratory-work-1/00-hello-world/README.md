@@ -6,8 +6,8 @@ First of all, check that AVR toolchain and downloader-uploader are installed on 
  `sudo apt install gcc-avr avr-libc avrdude`  
 
 The initial command allows, in one shot, to preprocess, compile, assemble, and link the artifact from the 'main.c' source file:  
- `avr-gcc -mmcu=atmega328p -Os -Wall -o main.elf main.c`  
-With the flags applied, we specify the device name, skip compiler optimization, and show all compilation warnings if any occur.  
+ `avr-gcc -mmcu=atmega328p -O0 -Wall -o main.elf main.c`  
+With the flags applied, we specify the device name, disable compiler optimization, and show all compilation warnings if any occur.  
 
 In order to display the sizes of sections inside binary files:  
  `avr-size --format=avr --mcu=atmega328p main.elf`  
