@@ -12,15 +12,17 @@
 void init_io_pins(void)
 {
     // Configure data direction for pins 0-7 (port D) as OUTPUT
-    DDRD = 0xff;  // aka 0b11111111 or 255
+    DDRD = 0xFF;  // aka 0b11111111 or 255
 }
 
 int main(void) 
 {
     init_io_pins();
 
+    char result = 'h';
+
     // Implementation-specific data type, for avr-gcc is a 'long unsigned int'
-    size_t result;
+    //size_t result;
 
     // 1 byte
     //result = sizeof(char);

@@ -43,8 +43,11 @@ Initial example state is "empty" port D, and "uninitialized" warning during comp
 |**double \***                                                      |2|
 |**void \***                                                        |2|
 
+<img src="scheme.jpeg">  
+
 See also:  
 - [C data types](https://en.wikipedia.org/wiki/C_data_types "C data types")  
 - [GCC Wiki avr-gcc](https://gcc.gnu.org/wiki/avr-gcc#Type_Layout "Type Layout")  
 - [Learn Makefiles](https://makefiletutorial.com/)  
+- [ASCII](https://en.wikipedia.org/wiki/ASCII)  
 
