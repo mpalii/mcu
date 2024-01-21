@@ -10,7 +10,7 @@ Software approach based on the dummy moving of an instruction pointer in loops (
 First of all disable internal clock divider with:  
 `make fuses-no-divider-int-rc`  
 
-Then, check the real frequencies on the pin 0 of port D using oscilloscope and write down the actual results. Here is some values of measurement:  
+Then, check the REAL frequencies on the pin 0 of port D using oscilloscope and write down the actual results. Here is some values of measurement:  
 |**Expected frequency**  |**Actual frequency**    |
 |:---------------------|:--------------|
 |1Hz    |1.0Hz   |
@@ -49,6 +49,8 @@ Delay "cost" calculation:
 
 Total: (1x1) + (1x26) + (2x24) + (1x1) + (2x2) = 80 "burned" cycles  
 
+<img src="scheme.jpeg">  
+
 See also:  
 - [9.2.1 Default Clock Source](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf#G3.1305082 "Default clock source")  
 - [28.2 Fuse Bits](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf#G3.1742043 "Fuse Bits")  
@@ -62,3 +64,4 @@ See also:
 - [DEC - Decrement](https://ww1.microchip.com/downloads/en/devicedoc/atmel-0856-avr-instruction-set-manual.pdf#_OPENTOPIC_TOC_PROCESSING_d94e19336 "DEC - Decrement")  
 - [BRNE - Branch if Not Equal](https://ww1.microchip.com/downloads/en/devicedoc/atmel-0856-avr-instruction-set-manual.pdf#_OPENTOPIC_TOC_PROCESSING_d94e14272 "BRNE - Branch if Not Equal")  
 - [RJMP - Relative Jump](https://ww1.microchip.com/downloads/en/devicedoc/atmel-0856-avr-instruction-set-manual.pdf#_OPENTOPIC_TOC_PROCESSING_d94e28815 "RJMP - Relative Jump")  
+- [AVR Fuse Calculator](https://www.engbedded.com/fusecalc/)  
