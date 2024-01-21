@@ -52,6 +52,8 @@ Ports 0x3d and 0x3e are the high and low portions of the stack pointer. This cod
 ```
 This calls your main function, then jumps to \_exit (an infinite loop) in case main returns.  
 
+<img src="scheme.jpeg">  
+
 See also:  
 - [GCC Wiki avr-gcc](https://gcc.gnu.org/wiki/avr-gcc#Type_Layout "Type Layout")
 - [AVR-GCC initialization code](https://electronics.stackexchange.com/questions/383026/avr-gcc-initialization-code "AVR-GCC initialization code")  
