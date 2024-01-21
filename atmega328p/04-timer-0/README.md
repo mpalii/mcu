@@ -10,7 +10,7 @@ OCR0A – Output Compare Register channel A;
 TIMSK 0 – Timer/Counter Interrupt Mask Register.  
 
 With the current example you will get something that really similar to the 50kHz pulses, but depending on temperature or supply voltage result value may vary. 
-Just for investigation try to freez the MCU, then check the real frequency on pin 0 port D, and then heat it, and check the frequency again. Moreover, try to change the value of supply voltage (offcourseб do not exceed the maximum voltage, see the datasheet).  
+Just for investigation try to freez the MCU, then check the real frequency on pin 0 port D, and then heat it, and check the frequency again. Moreover, try to change the value of supply voltage (of course do not exceed the maximum voltage, see the datasheet).  
 
 Here is some results:  
 - t = 28-29 degree Celsius: f = [50.1 ; 50.3] kHz;
@@ -23,9 +23,11 @@ Here is some results:
 - V = 5.0 volts: f = 50.2 kHz;
 - V = 5.5 volts: f = 50.2 kHz.
 
-These results show thar internal RC can't provide accurate timings. Let's adjust our 'Makefile' with the target `fuses-no-divider-ext-clk` which turn off internal prescaler and internal RC, and for now the MCU will look at the external oscillator, so just connect 8MHz crystal with two capacitors as described in the datasheet.  
+These results show that internal RC can't provide accurate timings. Let's adjust our 'Makefile' with the target `fuses-no-divider-ext-clk` which turn off internal prescaler and internal RC, and for now the MCU will look at the external oscillator, so just connect 8MHz crystal with two capacitors as described in the datasheet.  
 
 Do the previous experiments again with external crystal. Now it looks really better:)  
+
+<img src="scheme.jpeg">  
 
 For extra investigation:
 - with 8MHz crystal make the fuse CKDIV8 programmed again (to get 1MHz result frequency) or use another 1MHz crystal, and try to generate 50kHz pulses again:);
