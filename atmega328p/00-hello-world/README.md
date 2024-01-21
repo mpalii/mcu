@@ -28,6 +28,11 @@ To upload the firmware to the flash memory:
 To erease the chip:  
  `avrdude -c usbasp-clone -p atmega328p -e`  
 
+To remove all build artifacts use:  
+ `rm *.hex *.elf`  
+
+ <img src="scheme.jpeg">
+
 For extra investigation:  
 - compile 'main.c' source file with regular GNU gcc compiler, and then compare file types of 'a.out' and 'main.elf' using `file` command;  
 - review an assembly listing of a source code.   
