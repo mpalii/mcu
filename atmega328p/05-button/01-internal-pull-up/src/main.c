@@ -1,6 +1,6 @@
 /**
  * @author Maksym Palii
- * @brief Button with internal PULL-UP resistor, RC DEBOUNCE
+ * @brief Button with internal PULL-UP resistor, no debounce
  * @version 1.0
  * @date 2024 January 25
  */
