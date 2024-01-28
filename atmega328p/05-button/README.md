@@ -26,3 +26,10 @@ $τ = 50kΩ * 0,1uF = 500000Ω * 0,0000001F = 0,005s = 5ms$
 
 *SIMULATION: No simulation issues in SimulIDE*  
 *REALTIME: The start is fine. Several hits on the button are accompanied by a bounce, ignoring the pull-up resistor leads to the high-impedance state of a button pin, and LEDs start to blink randomly*  
+
+#### Example 04 - EXTERNAL PULL-UP resistor is used R = 20kΩ, R = 2.2kΩ and C = 0.1µF is used for debouncing  
+<img src="04-external-pull-up-rc/scheme.jpeg">  
+<img src="04-external-pull-up-rc/photo.jpg">  
+
+*SIMULATION: LEDs is turned on at the beginning of a simulation in SimulIDE!*  
+*REALTIME: The start is fine. RC solution for debounce is fine, ignoring the pull-up resistor leads to the high-impedance state of a button pin, and LEDs start to blink randomly*  
