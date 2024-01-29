@@ -1,6 +1,6 @@
 /**
  * @author Maksym Palii
- * @brief Button with internal PULL-UP resistor, R = 2.2kΩ and C = 0.1µF is used for debouncing  
+ * @brief Button with internal PULL-UP resistor; R = 20kΩ and C = 1µF is used for debouncing  
  * @version 1.0
  * @date 2024 January 25
  */
@@ -21,7 +21,7 @@ int main(void)
     bool button_was_pressed = false;
 
     // FIX: delay for capacitor charging
-    //_delay_ms(5);
+    //_delay_ms(100);
 
     while (true)
     {

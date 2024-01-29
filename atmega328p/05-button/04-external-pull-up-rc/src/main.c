@@ -1,6 +1,6 @@
 /**
  * @author Maksym Palii
- * @brief Button with external PULL-UP resistor R = 20kΩ; R = 2.2kΩ and C = 0.1µF is used for debouncing  
+ * @brief Button with external PULL-UP resistor R = 20kΩ; R = 20kΩ and C = 1µF is used for debouncing  
  * @version 1.0
  * @date 2024 January 29
  */

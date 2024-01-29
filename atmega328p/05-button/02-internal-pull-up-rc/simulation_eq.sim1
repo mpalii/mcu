@@ -1,0 +1,47 @@
+<circuit version="1.0.0-SR2" rev="1449" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Tunnel" CircId="Tunnel-54" mainComp="false" Show_id="false" Show_Val="false" Pos="780,332" rotation="90" hflip="-1" vflip="1" label="Tunnel-54" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="C0" />
+
+<item itemtype="Ground" CircId="Ground-55" mainComp="false" Show_id="false" Show_Val="false" Pos="780,460" rotation="0" hflip="1" vflip="1" label="Ground-55" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Push" CircId="Push-56" mainComp="false" Show_id="false" Show_Val="false" Pos="780,364" rotation="-90" hflip="1" vflip="1" label="Push-56" idLabPos="-12,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1 _Poles" />
+
+<item itemtype="Capacitor" CircId="Capacitor-72" mainComp="false" ShowProp="Capacitance" Show_id="false" Show_Val="true" Pos="732,388" rotation="-90" hflip="1" vflip="1" label="Capacitor-72" idLabPos="-16,-24" labelrot="0" valLabPos="-28,6" valLabRot="0" Capacitance="1 µF" Resistance="1e-06 Ω" InitVolt="0 V" AutoStep="0 _Steps" />
+
+<item itemtype="Ground" CircId="Ground-84" mainComp="false" Show_id="false" Show_Val="false" Pos="732,460" rotation="0" hflip="1" vflip="1" label="Ground-84" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Oscope" CircId="Oscope-89" mainComp="false" Show_id="false" Show_Val="false" Pos="660,556" rotation="0" hflip="1" vflip="1" label="Oscope-89" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _Pixels" Basic_Y="135 _Pixels" BufferSize="600000 Samples" TimDiv="100000000000" TimPos="0,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="4" Filter="0.1 V" Trigger="4" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,0,0,0," />
+
+<item itemtype="Resistor" CircId="Resistor-93" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="780,412" rotation="90" hflip="-1" vflip="1" label="Resistor-93" idLabPos="-16,-24" labelrot="0" valLabPos="9,6" valLabRot="0" Resistance="20 kΩ" />
+
+<item itemtype="Tunnel" CircId="Tunnel-118" mainComp="false" Show_id="false" Show_Val="false" Pos="548,508" rotation="360" hflip="1" vflip="1" label="Tunnel-118" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="C0" />
+
+<item itemtype="Tunnel" CircId="Tunnel-133" mainComp="false" Show_id="false" Show_Val="false" Pos="732,332" rotation="90" hflip="-1" vflip="1" label="Tunnel-133" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="C0" />
+
+<item itemtype="Rail" CircId="Rail-165" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="612,352" rotation="90" hflip="1" vflip="1" label="Rail-165" idLabPos="-16,-24" labelrot="0" valLabPos="-5,5" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Resistor" CircId="Resistor-166" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="612,400" rotation="90" hflip="-1" vflip="1" label="Resistor-166" idLabPos="-16,-24" labelrot="0" valLabPos="11,6" valLabRot="0" Resistance="50 kΩ" />
+
+<item itemtype="Tunnel" CircId="Tunnel-168" mainComp="false" Show_id="false" Show_Val="false" Pos="660,432" rotation="-360" hflip="-1" vflip="1" label="Tunnel-168" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="C0" />
+
+<item itemtype="Rectangle" CircId="Rectangle-176" mainComp="false" Show_id="false" Show_Val="false" Pos="612,388" rotation="0" hflip="1" vflip="1" label="Rectangle-176" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="50 _Pixels" V_size="120 _Pixels" Border="2 _Pixels" Z_Value="-1" Color="#a0a0a4" Opacity="1" />
+
+<item itemtype="TextComponent" CircId="TextComponent-185" mainComp="false" Show_id="false" Show_Val="false" Pos="580,288" rotation="0" hflip="1" vflip="1" label="TextComponent-185" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _Pixels" Border="1 _Pixels" Opacity="1" Font="Helvetica [Cronyx]" Font_Size="10 _Pixels" Fixed_Width="false" Text="MCU output" />
+
+<item itemtype="Connector" uid="connector-186" startpinid="Tunnel-118-pin" endpinid="Oscope-89-Pin0" pointList="548,508,572,508" />
+
+<item itemtype="Connector" uid="connector-187" startpinid="Capacitor-72-lPin" endpinid="Ground-84-Gnd" pointList="732,404,732,444" />
+
+<item itemtype="Connector" uid="connector-188" startpinid="Tunnel-133-pin" endpinid="Capacitor-72-rPin" pointList="732,332,732,372" />
+
+<item itemtype="Connector" uid="connector-189" startpinid="Rail-165-outnod" endpinid="Resistor-166-lPin" pointList="612,368,612,384" />
+
+<item itemtype="Connector" uid="connector-190" startpinid="Resistor-166-rPin" endpinid="Tunnel-168-pin" pointList="612,416,612,432,660,432" />
+
+<item itemtype="Connector" uid="Connector-194" startpinid="Tunnel-54-pin" endpinid="Push-56-switch0pinN" pointList="780,332,780,348" />
+
+<item itemtype="Connector" uid="Connector-195" startpinid="Push-56-pinP0" endpinid="Resistor-93-lPin" pointList="780,380,780,396" />
+
+<item itemtype="Connector" uid="Connector-196" startpinid="Resistor-93-rPin" endpinid="Ground-55-Gnd" pointList="780,428,780,444" />
+
+</circuit>
