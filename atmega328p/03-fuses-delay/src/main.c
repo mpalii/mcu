@@ -1,4 +1,4 @@
-/*
+/**
  * @author Maksym Palii
  * @brief Delay example, visual perception
  * @version 1.0

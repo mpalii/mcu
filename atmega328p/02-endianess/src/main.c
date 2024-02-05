@@ -1,4 +1,4 @@
-/*
+/**
  * @author Maksym Palii
  * @brief Endianess: Little
  * @version 1.0

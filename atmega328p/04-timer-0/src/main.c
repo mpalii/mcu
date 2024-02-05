@@ -1,4 +1,4 @@
-/*
+/**
  * @author Maksym Palii
  * @brief Timer 0 usage example, 50kHz generator
  * @version 1.0

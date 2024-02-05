@@ -1,4 +1,4 @@
-/*
+/**
  * @author Maksym Palii
  * @brief avr-gcc type layout, https://gcc.gnu.org/wiki/avr-gcc#Type_Layout
  * @version 1.0
