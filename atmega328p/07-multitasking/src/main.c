@@ -1,12 +1,12 @@
-/*
+/**
  * @author Maksym Palii
  * @brief Multitasking, example of asynchronous execution using simpliest round robin scheduler
  * @version 1.0
- * @date 2023 June 10
+ * @date 2024 February 10
  * 
  * - task 1 - 2Hz frequency beacon flasher
- * - task 2 - 5Hz frequency beacon flasher
- * - task 3 - 25Hz frequency beacon flasher
+ * - task 2 - 500Hz frequency beacon flasher
+ * - task 3 - 25/50Hz frequency beacon flasher
  * - task 4 - button handler, enable or disable double speed flashing frequency in task 3
  *
  * IT IS IMPORTANT! All frequencies of flashers with this approach are approximations
@@ -30,7 +30,7 @@ void task_1(void);
 volatile uint8_t time1;
 
 // Task 2
-#define T2 100
+#define T2 1
 void task_2(void);
 volatile uint8_t time2;
 
@@ -48,7 +48,11 @@ bool button_was_pressed = false;
 bool double_speed_enabled = false;
 
 ISR (TIMER0_COMPA_vect)
-{
+{    
+    // Toggle pin 0 port B
+    PORTB ^= _BV(PORTB0);
+
+    // Adjust task's timers
     if (time1 > 0) --time1;
     if (time2 > 0) --time2;
     if (time3 > 0) --time3;
@@ -77,6 +81,9 @@ void init_io_pins(void)
     DDRD |= _BV(DDD0) | _BV(DDD1) | _BV(DDD2);
     // Enable internal pull-up resistor pin 3 (port D)
     PORTD |= _BV(DDD3);
+
+    // Set port B pin 0 as output
+    DDRB |= _BV(DDB0);
 }
 
 void init_tasks(void)
