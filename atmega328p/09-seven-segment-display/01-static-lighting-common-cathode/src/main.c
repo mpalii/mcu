@@ -1,6 +1,6 @@
 /**
  * @author Maksym Palii
- * @brief seven-segment display with common anode, static lighting
+ * @brief seven-segment display with common cathode, static lighting
  * @version 1.0
  * @date 2024 February 14
  */
