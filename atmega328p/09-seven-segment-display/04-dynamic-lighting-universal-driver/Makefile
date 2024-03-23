@@ -3,7 +3,7 @@
 DESTINATION = firmware
 DEVICE      = atmega328p
 PROGRAMMER  = usbasp-clone
-DEFINES		= $(addprefix -D, COMMON_ANODE_MODE NO_LEADING_ZEROS_MODE)
+DEFINES		= $(addprefix -D, COMMON_CATHODE_MODE NO_LEADING_ZEROS_MODE)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(DEVICE)

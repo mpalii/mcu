@@ -45,31 +45,31 @@ void gpio_init(void);
 /*
  * Hardware pin mapping
  */
-#define SEGMENT_a         _PB0
-#define SEGMENT_b         _PB1
-#define SEGMENT_c         _PB2
-#define SEGMENT_d         _PB3
-#define SEGMENT_e         _PB4
-#define SEGMENT_f         _PB5
-#define SEGMENT_g         _PB6
-#define SEGMENT_dp        _PB7
+#define _GPIO_UNUSED_01         _PB0
+#define _GPIO_UNUSED_02         _PB1
+#define _GPIO_UNUSED_03         _PB2
+#define _GPIO_UNUSED_04         _PB3
+#define _GPIO_UNUSED_05         _PB4
+#define _GPIO_UNUSED_06         _PB5
+#define XTAL1                   _PB6
+#define XTAL2                   _PB7
 
-#define DIGIT_1           _PC0
-#define DIGIT_2           _PC1
-#define DIGIT_3           _PC2
-#define DIGIT_4           _PC3
-#define _GPIO_UNUSED_13   _PC4
-#define _GPIO_UNUSED_14   _PC5
-#define RESET             _PC6
+#define DIGIT_4                 _PC0
+#define DIGIT_3                 _PC1
+#define DIGIT_2                 _PC2
+#define DIGIT_1                 _PC3
+#define _GPIO_UNUSED_13         _PC4
+#define _GPIO_UNUSED_14         _PC5
+#define RESET                   _PC6
 
-#define _GPIO_UNUSED_16   _PD0
-#define _GPIO_UNUSED_17   _PD1
-#define _GPIO_UNUSED_18   _PD2
-#define _GPIO_UNUSED_19   _PD3
-#define _GPIO_UNUSED_20   _PD4
-#define _GPIO_UNUSED_21   _PD5
-#define _GPIO_UNUSED_22   _PD6
-#define _GPIO_UNUSED_23   _PD7
+#define SEGMENT_a               _PD0
+#define SEGMENT_b               _PD1
+#define SEGMENT_c               _PD2
+#define SEGMENT_d               _PD3
+#define SEGMENT_e               _PD4
+#define SEGMENT_f               _PD5
+#define SEGMENT_g               _PD6
+#define SEGMENT_dp              _PD7
 
 /*
  * Addresses of DDRx, PORTx and PINx registers have the same offset and equals to 3.
