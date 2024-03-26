@@ -51,8 +51,8 @@ void gpio_init(void);
 #define _GPIO_UNUSED_04   _PB3
 #define _GPIO_UNUSED_05   _PB4
 #define _GPIO_UNUSED_06   _PB5
-#define _GPIO_UNUSED_07   _PB6
-#define _GPIO_UNUSED_08   _PB7
+#define XTAL1             _PB6
+#define XTAL2             _PB7
 
 #define _GPIO_UNUSED_09   _PC0
 #define _GPIO_UNUSED_10   _PC1
