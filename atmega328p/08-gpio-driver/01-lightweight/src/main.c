@@ -1,8 +1,8 @@
 /**
  * @author Maksym Palii
- * @brief GPIO driver, 2Hz blinker for all pins except of RESET
+ * @brief GPIO driver, running leds
  * @version 1.0
- * @date 2024 February 10
+ * @date 2024 March 30
  */
 
 #define F_CPU (8000000UL)
@@ -29,18 +29,12 @@ int main(void)
 
     while (true)
     {
-        // set pins driven HIGH
+        // Turn on the led for 100ms
         for (uint8_t i = 0; i < sizeof(pins)/sizeof(uint8_t); i++)
         {
-            GPIO_HIGH(pins[i]);
+            GPIO_TOGGLE(pins[i]);
             _delay_ms(100);
-        }
-        
-        // set pins driven LOW
-        for (uint8_t i = 0; i < sizeof(pins)/sizeof(uint8_t); i++)
-        {
-            GPIO_LOW(pins[i]);
-            _delay_ms(100);
+            GPIO_TOGGLE(pins[i]);
         }
     }
 }

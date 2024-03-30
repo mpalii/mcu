@@ -1,6 +1,6 @@
-<circuit version="1.0.0-SR2" rev="1449" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+<circuit version="1.0.0-SR2" rev="" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega328-1" mainComp="false" ShowProp="Frequency" Show_id="true" Show_Val="true" Pos="708,540" rotation="-90" hflip="1" vflip="1" label="ATmega328" idLabPos="57,35" labelrot="90" valLabPos="3,124" valLabRot="0" Frequency="8 MHz" Program="../target/firmware.hex" Auto_Load="true" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" ShowProp="Frequency" Show_id="true" Show_Val="true" Pos="572,628" rotation="0" hflip="1" vflip="1" label="ATmega328" idLabPos="42.709,84.788" labelrot="-90" valLabPos="3,124" valLabRot="0" Frequency="8 MHz" Program="../target/firmware.hex" Auto_Load="true" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
 
 <item itemtype="Led" CircId="Led-2" mainComp="false" Show_id="false" Show_Val="false" Pos="880,712" rotation="90" hflip="1" vflip="1" label="Led-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ω" />
 
@@ -8,23 +8,23 @@
 
 <item itemtype="Ground" CircId="Ground-5" mainComp="false" Show_id="false" Show_Val="false" Pos="880,760" rotation="0" hflip="1" vflip="1" label="Ground-5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
-<item itemtype="Tunnel" CircId="Tunnel-14" mainComp="false" Show_id="false" Show_Val="false" Pos="724,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" />
+<item itemtype="Tunnel" CircId="Tunnel-14" mainComp="false" Show_id="false" Show_Val="false" Pos="548,644" rotation="0" hflip="1" vflip="1" label="Tunnel-1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" />
 
 <item itemtype="Tunnel" CircId="Tunnel-15" mainComp="false" Show_id="false" Show_Val="false" Pos="880,632" rotation="90" hflip="-1" vflip="1" label="Tunnel-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" />
 
-<item itemtype="Tunnel" CircId="Tunnel-18" mainComp="false" Show_id="false" Show_Val="false" Pos="732,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-18" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" />
+<item itemtype="Tunnel" CircId="Tunnel-18" mainComp="false" Show_id="false" Show_Val="false" Pos="548,652" rotation="0" hflip="1" vflip="1" label="Tunnel-18" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" />
 
-<item itemtype="Tunnel" CircId="Tunnel-19" mainComp="false" Show_id="false" Show_Val="false" Pos="740,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-19" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" />
+<item itemtype="Tunnel" CircId="Tunnel-19" mainComp="false" Show_id="false" Show_Val="false" Pos="548,660" rotation="0" hflip="1" vflip="1" label="Tunnel-19" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" />
 
-<item itemtype="Tunnel" CircId="Tunnel-24" mainComp="false" Show_id="false" Show_Val="false" Pos="748,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-24" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" />
+<item itemtype="Tunnel" CircId="Tunnel-24" mainComp="false" Show_id="false" Show_Val="false" Pos="548,668" rotation="0" hflip="1" vflip="1" label="Tunnel-24" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" />
 
-<item itemtype="Tunnel" CircId="Tunnel-25" mainComp="false" Show_id="false" Show_Val="false" Pos="756,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-25" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D4" />
+<item itemtype="Tunnel" CircId="Tunnel-25" mainComp="false" Show_id="false" Show_Val="false" Pos="548,676" rotation="0" hflip="1" vflip="1" label="Tunnel-25" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D4" />
 
-<item itemtype="Tunnel" CircId="Tunnel-26" mainComp="false" Show_id="false" Show_Val="false" Pos="796,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-26" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D5" />
+<item itemtype="Tunnel" CircId="Tunnel-26" mainComp="false" Show_id="false" Show_Val="false" Pos="548,716" rotation="0" hflip="1" vflip="1" label="Tunnel-26" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D5" />
 
-<item itemtype="Tunnel" CircId="Tunnel-27" mainComp="false" Show_id="false" Show_Val="false" Pos="804,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-27" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D6" />
+<item itemtype="Tunnel" CircId="Tunnel-27" mainComp="false" Show_id="false" Show_Val="false" Pos="548,724" rotation="0" hflip="1" vflip="1" label="Tunnel-27" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D6" />
 
-<item itemtype="Tunnel" CircId="Tunnel-28" mainComp="false" Show_id="false" Show_Val="false" Pos="812,564" rotation="-90" hflip="1" vflip="1" label="Tunnel-28" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D7" />
+<item itemtype="Tunnel" CircId="Tunnel-28" mainComp="false" Show_id="false" Show_Val="false" Pos="548,732" rotation="0" hflip="1" vflip="1" label="Tunnel-28" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D7" />
 
 <item itemtype="Resistor" CircId="Resistor-40" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="848,664" rotation="90" hflip="1" vflip="1" label="Resistor-40" idLabPos="-16,-24" labelrot="0" valLabPos="11,-4" valLabRot="-180" Resistance="300 Ω" />
 
@@ -86,23 +86,23 @@
 
 <item itemtype="Connector" uid="connector-78" startpinid="Led-2-rPin" endpinid="Ground-5-Gnd" pointList="880,728,880,744" />
 
-<item itemtype="Connector" uid="connector-79" startpinid="Tunnel-14-pin" endpinid="mega328-1-PORTD0" pointList="724,564,724,548" />
+<item itemtype="Connector" uid="connector-79" startpinid="Tunnel-14-pin" endpinid="mega328-1-PORTD0" pointList="548,644,564,644" />
 
 <item itemtype="Connector" uid="connector-80" startpinid="Tunnel-15-pin" endpinid="Resistor-3-lPin" pointList="880,632,880,648" />
 
-<item itemtype="Connector" uid="connector-81" startpinid="Tunnel-18-pin" endpinid="mega328-1-PORTD1" pointList="732,564,732,548" />
+<item itemtype="Connector" uid="connector-81" startpinid="Tunnel-18-pin" endpinid="mega328-1-PORTD1" pointList="548,652,564,652" />
 
-<item itemtype="Connector" uid="connector-82" startpinid="Tunnel-19-pin" endpinid="mega328-1-PORTD2" pointList="740,564,740,548" />
+<item itemtype="Connector" uid="connector-82" startpinid="Tunnel-19-pin" endpinid="mega328-1-PORTD2" pointList="548,660,564,660" />
 
-<item itemtype="Connector" uid="connector-83" startpinid="Tunnel-24-pin" endpinid="mega328-1-PORTD3" pointList="748,564,748,548" />
+<item itemtype="Connector" uid="connector-83" startpinid="Tunnel-24-pin" endpinid="mega328-1-PORTD3" pointList="548,668,564,668" />
 
-<item itemtype="Connector" uid="connector-84" startpinid="Tunnel-25-pin" endpinid="mega328-1-PORTD4" pointList="756,564,756,548" />
+<item itemtype="Connector" uid="connector-84" startpinid="Tunnel-25-pin" endpinid="mega328-1-PORTD4" pointList="548,676,564,676" />
 
-<item itemtype="Connector" uid="connector-85" startpinid="Tunnel-26-pin" endpinid="mega328-1-PORTD5" pointList="796,564,796,548" />
+<item itemtype="Connector" uid="connector-85" startpinid="Tunnel-26-pin" endpinid="mega328-1-PORTD5" pointList="548,716,564,716" />
 
-<item itemtype="Connector" uid="connector-86" startpinid="Tunnel-27-pin" endpinid="mega328-1-PORTD6" pointList="804,564,804,548" />
+<item itemtype="Connector" uid="connector-86" startpinid="Tunnel-27-pin" endpinid="mega328-1-PORTD6" pointList="548,724,564,724" />
 
-<item itemtype="Connector" uid="connector-87" startpinid="Tunnel-28-pin" endpinid="mega328-1-PORTD7" pointList="812,564,812,548" />
+<item itemtype="Connector" uid="connector-87" startpinid="Tunnel-28-pin" endpinid="mega328-1-PORTD7" pointList="548,732,564,732" />
 
 <item itemtype="Connector" uid="connector-88" startpinid="Tunnel-43-pin" endpinid="Resistor-40-lPin" pointList="848,632,848,648" />
 
