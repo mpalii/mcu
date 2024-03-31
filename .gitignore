@@ -54,3 +54,19 @@ dkms.conf
 # Other property files
 *.json
 
+# KiCad
+*.kicad_prl
+*-info-cache
+*-backups/
+*.gbl
+*.gbs
+*.gbp
+*.gbo
+*.gm1
+*.gtl
+*.gts
+*.gtp
+*.gto
+*.drl
+*.gbr
+
