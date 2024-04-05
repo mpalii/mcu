@@ -19,8 +19,8 @@ uint16_t alphabet[] =
     0x0000,     // space
     0x6606,	    // !
     0xAA00,	    // “
-    0xFFFF,	    // #
-    0xFFFF,	    // $
+    0xFFFF,	    // #    NOT IMPLEMENTED
+    0xFFFF,	    // $    NOT IMPLEMENTED
     0x9249,	    // %
     0x2FAE,	    // &
     0x6200,	    // '
@@ -80,7 +80,7 @@ uint16_t alphabet[] =
     0x6226,	    // ]
     0x4A00,	    // ^
     0x000F,	    // _
-    0xFFFF,	    // `
+    0xFFFF,	    // `    NOT IMPLEMENTED
     0x69BD,	    // a
     0x8E9E,	    // b
     0x7887,	    // c
