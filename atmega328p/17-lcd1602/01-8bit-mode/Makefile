@@ -13,7 +13,9 @@ AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 
 # Source files
 SOURCES = \
-    src/main.c
+    src/main.c \
+	src/drivers/gpio.c \
+	src/drivers/lcd1602.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
