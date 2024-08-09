@@ -13,5 +13,5 @@
 
 void init_gpio(void)
 {
-    GPIO_SET_OUTPUT(SIGNAL_LED);
+    GPIO_SET_INPUT(LINE_1_WIRE);
 }
