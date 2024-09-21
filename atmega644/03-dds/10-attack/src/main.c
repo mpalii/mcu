@@ -42,19 +42,17 @@ const int8_t sin_table[256] =
 volatile uint16_t phase_counter = 0;    // Fixed point: 2bits overflow + 8bits main + 6bits underflow (fractional part)
 volatile uint8_t attack_counter = 0;
 volatile uint16_t amplitude_rise = MAX_AMPLITUDE;
-volatile uint16_t amplitude_rise_main = 0;
 
 ISR (TIMER1_COMPA_vect)
 {
     if ((attack_counter & 0xFF) == 0)
     {
         amplitude_rise = amplitude_rise - (amplitude_rise >> 10);
-        amplitude_rise_main = MAX_AMPLITUDE - amplitude_rise;
     }
 
     phase_counter += FREQUENCY_HZ;
     uint8_t phase = (uint8_t) (phase_counter >> FRACTIONAL_PART);
-    uint8_t amplitude = 127 + (((amplitude_rise_main >> 8) * sin_table[phase]) >> 8);
+    uint8_t amplitude = 127 + ((((MAX_AMPLITUDE - amplitude_rise) >> 8) * sin_table[phase]) >> 8);
     set_duty(amplitude);
 
     attack_counter++;
