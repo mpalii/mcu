@@ -2,26 +2,92 @@
  * @author Maksym Palii
  * @brief FM modulation
  * @version 2.0
- * @date 2024 September 22
+ * @date 2024 September 23
  */
 
 #define F_CPU           (18432000UL)
 #define MAX_AMPLITUDE   (0xFFFF)
-#define FRACTIONAL_PART (6)  // 16384 / 256 = 64; 64 = 2 pow 6
+#define PHASE_FACTOR    (4)     // 65536 / 16384 = 4;
 
-#define FREQUENCY_HZ    (261)
-#define TAU_RISE        (1)
-#define TAU_FALL        (5)
-#define FREQUENCY_FM    (350)
-#define TAU_FM          (5)
-#define DEPTH_FM        (9)
+// rise and fall SHIFT factor  -- bigger is slower
+// 6 implies tau of 64 cycles
+// 8 implies tau of 256 cycles
+// max value is 8
+
+// FM modulation depth SHIFT factor 
+// bigger factor implies smaller FM!
+// useful range is 4 to 15
+
+// Default:
+#define MAIN_FREQUENCY  (261)
+#define MAIN_TAU_RISE   (0)
+#define MAIN_TAU_FALL   (4)
+#define FM_FREQUENCY    (65)
+#define FM_TAU_FALL     (6)
+#define FM_DEPTH        (7)
+
+// Chime:
+// #define MAIN_FREQUENCY  (261)
+// #define MAIN_TAU_RISE   (1)
+// #define MAIN_TAU_FALL   (5)
+// #define FM_FREQUENCY    (350)
+// #define FM_TAU_FALL     (5)
+// #define FM_DEPTH        (9)
+
+// Plucked String 1:
+// #define MAIN_FREQUENCY  (500)
+// #define MAIN_TAU_RISE   (1)
+// #define MAIN_TAU_FALL   (3)
+// #define FM_FREQUENCY    (750)
+// #define FM_TAU_FALL     (3)
+// #define FM_DEPTH        (8)
+
+// Plucked String 2:
+// #define MAIN_FREQUENCY  (600)
+// #define MAIN_TAU_RISE   (0)
+// #define MAIN_TAU_FALL   (5)
+// #define FM_FREQUENCY    (150)
+// #define FM_TAU_FALL     (6)
+// #define FM_DEPTH        (8)
+
+// Bowed string:
+// #define MAIN_FREQUENCY  (300)
+// #define MAIN_TAU_RISE   (4)
+// #define MAIN_TAU_FALL   (5)
+// #define FM_FREQUENCY    (300)
+// #define FM_TAU_FALL     (6)
+// #define FM_DEPTH        (8)
+
+// Small, stiff rod:
+// #define MAIN_FREQUENCY  (1440)
+// #define MAIN_TAU_RISE   (1)
+// #define MAIN_TAU_FALL   (3)
+// #define FM_FREQUENCY    (50) // at 100 get stiff string; at 200 get hollow pipe
+// #define FM_TAU_FALL     (5)
+// #define FM_DEPTH        (10) // or 9
+
+// Bell/chime:
+// #define MAIN_FREQUENCY  (1440)
+// #define MAIN_TAU_RISE   (1)
+// #define MAIN_TAU_FALL   (5)
+// #define FM_FREQUENCY    (600)
+// #define FM_TAU_FALL     (6)
+// #define FM_DEPTH        (8)
+
+// Bell:
+// #define MAIN_FREQUENCY  (300)
+// #define MAIN_TAU_RISE   (0)
+// #define MAIN_TAU_FALL   (5)
+// #define FM_FREQUENCY    (1000)
+// #define FM_TAU_FALL     (6)
+// #define FM_DEPTH        (8)
 
 #include "drivers/gpio.h"   
 #include "drivers/timer0.h"
 #include "drivers/timer1.h"
 #include <avr/interrupt.h>
 
-const int8_t sin_table[256] =
+const int8_t sine[] =
 {
        0,   3,   6,   9,  12,  15,  18,  21,  24,  27,  30,  33,  36,  39,  42,  45,
       48,  51,  54,  57,  59,  62,  65,  67,  70,  73,  75,  78,  80,  82,  85,  87,
@@ -42,46 +108,40 @@ const int8_t sin_table[256] =
 };
 
 // DDS specific section
-volatile uint16_t phase_counter_main = 0;    // Fixed point: 2bits overflow + 8bits main + 6bits underflow (fractional part)
-volatile uint16_t amplitude_rise = MAX_AMPLITUDE;
-volatile uint16_t amplitude_fall = MAX_AMPLITUDE;
-volatile uint16_t phase_counter_fm = 0;
-volatile uint16_t amplitude_fall_fm = MAX_AMPLITUDE;
-volatile uint8_t dynamic_counter = 0;
+volatile uint16_t main_phase_counter = 0;
+volatile uint16_t main_amplitude_rise = MAX_AMPLITUDE;
+volatile uint16_t main_amplitude_fall = MAX_AMPLITUDE;
+volatile uint16_t fm_phase_counter = 0;
+volatile uint16_t fm_amplitude_fall = MAX_AMPLITUDE;
+volatile uint8_t prescaler = 0;
 
 ISR (TIMER1_COMPA_vect, ISR_NAKED)
 {
-    phase_counter_main += FREQUENCY_HZ;
-    phase_counter_fm += FREQUENCY_FM;
+    main_phase_counter += MAIN_FREQUENCY * PHASE_FACTOR;
+    fm_phase_counter += FM_FREQUENCY * PHASE_FACTOR;
 
-    if ((dynamic_counter & 0xFF) == 0)
+    // the (prescaler & 0xFF) slows down the decay computation by 256 times
+    if ((prescaler & 0xFF) == 0)
     {
-        amplitude_rise = amplitude_rise - (amplitude_rise >> TAU_RISE);
-        amplitude_fall = amplitude_fall - (amplitude_fall >> TAU_FALL);
-        amplitude_fall_fm = amplitude_fall_fm - (amplitude_fall_fm >> TAU_FM);
+        main_amplitude_rise = main_amplitude_rise - (main_amplitude_rise >> MAIN_TAU_RISE);
+        main_amplitude_fall = main_amplitude_fall - (main_amplitude_fall >> MAIN_TAU_FALL);
+        fm_amplitude_fall = fm_amplitude_fall - (fm_amplitude_fall >> FM_TAU_FALL);
     }
 
-    uint8_t rise = (MAX_AMPLITUDE - amplitude_rise) >> 8;
-    uint8_t fall = amplitude_fall >> 8;
-    uint8_t amplitude = ((uint16_t) rise * fall) >> 8;
+    uint8_t main_rise = (MAX_AMPLITUDE - main_amplitude_rise) >> 8;
+    uint8_t main_fall = main_amplitude_fall >> 8;
+    uint8_t main_amplitude = ((uint16_t) main_rise * main_fall) >> 8;
 
-    uint8_t phase = (uint8_t) (phase_counter_main >> FRACTIONAL_PART);
-    uint8_t phase_fm = (uint8_t) (phase_counter_fm >> FRACTIONAL_PART);
-    int8_t amplitude_fm = sin_table[phase_fm];
+    uint8_t main_phase = (uint8_t) (main_phase_counter >> 8);
+    uint8_t fm_phase = (uint8_t) (fm_phase_counter >> 8);
+    int8_t fm_amplitude = sine[fm_phase];
 
-    // uint8_t phase = (uint8_t) (phase_counter_main + amplitude_fm * (amplitude_fall_fm >> DEPTH_FM));
-    // uint8_t phase = (uint8_t) (phase_counter_main + (amplitude_fm * (amplitude_fall_fm >> 8) >> DEPTH_FM));
-    // uint8_t phase = (uint8_t) (((uint8_t) (phase_counter_main >> FRACTIONAL_PART)) + (amplitude_fm * (amplitude_fall_fm >> 8) >> DEPTH_FM));
+    uint8_t result_phase = main_phase + ((fm_amplitude * ((int16_t) (fm_amplitude_fall >> 8))) >> FM_DEPTH);
 
-    // uint8_t result_phase = (((uint16_t) phase << 8) + (((amplitude_fm * amplitude_fall_fm)))) >> 8;
-
-    uint8_t result_phase = phase + ((amplitude_fm * ((int16_t) (amplitude_fall_fm >> 8))) >> DEPTH_FM);
-
-    uint8_t out = 128 + (((uint16_t) amplitude * sin_table[result_phase]) >> 8);
-
+    uint8_t out = 128 + (((uint16_t) main_amplitude * sine[result_phase]) >> 8);
     set_duty(out);
 
-    dynamic_counter++;
+    prescaler++;
 
     asm("reti"::);
 }
