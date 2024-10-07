@@ -1,0 +1,142 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "01_LedOn", "01_LedOn\01_LedOn.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "02_BlinkingLed", "02_BlinkingLed\02_BlinkingLed.cproj", "{2165A79A-29C1-431E-B412-0E3311500D1F}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "03_Button", "03_Button\03_Button.cproj", "{A76B8249-BB69-4687-B79E-86EE0AD4935B}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "04_7SegDisplayCC_StaticLighting", "04_7SegDisplayCC_StaticLighting\04_7SegDisplayCC_StaticLighting.cproj", "{7F80D5CD-897F-4BEF-9D1B-8F333083890A}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "05_7SegDisplayCA_StaticLighting", "05_7SegDisplayCA_StaticLighting\05_7SegDisplayCA_StaticLighting.cproj", "{284AEDA7-25B6-4601-9A70-1E55AA7501BA}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "06_7SegDisplayCC_Buttons", "06_7SegDisplayCC_Buttons\06_7SegDisplayCC_Buttons.cproj", "{5DC862F9-1F2B-4003-A13C-F98896A25C71}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "07_BinToHexConverter", "07_BinToHexConverter\07_BinToHexConverter.cproj", "{94121232-E28D-4BC3-9409-835F73063BF8}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "08_7SegDisplayCC_DynamicLighting", "08_7SegDisplayCC_DynamicLighting\08_7SegDisplayCC_DynamicLighting.cproj", "{6C98F4CB-932F-420E-802D-416A3CF97A9C}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "09_7SegDisplayCC_DynamicLighting_NPN", "09_7SegDisplayCC_DynamicLighting_NPN\09_7SegDisplayCC_DynamicLighting_NPN.cproj", "{CA6D1D7D-A372-49F8-92EC-DBF7AEA4D31A}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "10_Interrupts_TimerCounter0_Overflow", "10_Interrupts_TimerCounter0_Overflow\10_Interrupts_TimerCounter0_Overflow.cproj", "{7FBF9253-D40B-426F-867E-C9800CBB0426}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "11_Interrupts_TimerCounter1_Overflow", "11_Interrupts_TimerCounter1_Overflow\11_Interrupts_TimerCounter1_Overflow.cproj", "{D5D544AD-7A44-4E4D-B760-620A5E3FE87D}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "12_Interrupts_TimerCounter2_Overflow", "12_Interrupts_TimerCounter2_Overflow\12_Interrupts_TimerCounter2_Overflow.cproj", "{FFC0D6C3-A898-42EA-8077-8DEC4130B2C6}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "13_Interrupts_TimerCounter1_CompareMatchA", "13_Interrupts_TimerCounter1_CompareMatchA\13_Interrupts_TimerCounter1_CompareMatchA.cproj", "{E3638771-D11F-4223-9231-6FBD853729D9}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "14_Interrupts_TimerCounter2_CompareMatch", "14_Interrupts_TimerCounter2_CompareMatch\14_Interrupts_TimerCounter2_CompareMatch.cproj", "{60907B85-D7F6-4935-A02F-F0F2D9A51631}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "15_Interrupts_ExternalInterruptRequest_INT0_INT1", "15_Interrupts_ExternalInterruptRequest_INT0_INT1\15_Interrupts_ExternalInterruptRequest_INT0_INT1.cproj", "{888B6182-14CA-4C60-AB00-330308FC10B2}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "16_DynamicLighting_TimerCounter0_Overflow", "16_DynamicLighting_TimerCounter0_Overflow\16_DynamicLighting_TimerCounter0_Overflow.cproj", "{D03EDE80-0D5D-4AD0-9FEB-A7EF6FEC54F9}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "17_DynamicLighting_Library", "17_DynamicLighting_Library\17_DynamicLighting_Library.cproj", "{96DDC7DE-91A2-4D65-8705-F15BD34F766A}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "18_Device_Watch", "18_Device_Watch\18_Device_Watch.cproj", "{D43F6907-E476-4E30-BE37-1FDD706BBA60}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "19_LCD1602_4bit_mode", "19_LCD1602_4bit_mode\19_LCD1602_4bit_mode.cproj", "{7F2AE653-C998-498E-99FF-800159E7939B}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "20_LCD1602_8bit_mode", "20_LCD1602_8bit_mode\20_LCD1602_8bit_mode.cproj", "{03DC9260-1F58-48AF-A6F2-0A98881BAD96}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "21_Device_Watch", "21_Device_Watch\21_Device_Watch.cproj", "{8979476B-15A5-44D4-8517-1C9EAE1C0FC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{2165A79A-29C1-431E-B412-0E3311500D1F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2165A79A-29C1-431E-B412-0E3311500D1F}.Debug|AVR.Build.0 = Debug|AVR
+		{2165A79A-29C1-431E-B412-0E3311500D1F}.Release|AVR.ActiveCfg = Release|AVR
+		{2165A79A-29C1-431E-B412-0E3311500D1F}.Release|AVR.Build.0 = Release|AVR
+		{A76B8249-BB69-4687-B79E-86EE0AD4935B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A76B8249-BB69-4687-B79E-86EE0AD4935B}.Debug|AVR.Build.0 = Debug|AVR
+		{A76B8249-BB69-4687-B79E-86EE0AD4935B}.Release|AVR.ActiveCfg = Release|AVR
+		{A76B8249-BB69-4687-B79E-86EE0AD4935B}.Release|AVR.Build.0 = Release|AVR
+		{7F80D5CD-897F-4BEF-9D1B-8F333083890A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7F80D5CD-897F-4BEF-9D1B-8F333083890A}.Debug|AVR.Build.0 = Debug|AVR
+		{7F80D5CD-897F-4BEF-9D1B-8F333083890A}.Release|AVR.ActiveCfg = Release|AVR
+		{7F80D5CD-897F-4BEF-9D1B-8F333083890A}.Release|AVR.Build.0 = Release|AVR
+		{284AEDA7-25B6-4601-9A70-1E55AA7501BA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{284AEDA7-25B6-4601-9A70-1E55AA7501BA}.Debug|AVR.Build.0 = Debug|AVR
+		{284AEDA7-25B6-4601-9A70-1E55AA7501BA}.Release|AVR.ActiveCfg = Release|AVR
+		{284AEDA7-25B6-4601-9A70-1E55AA7501BA}.Release|AVR.Build.0 = Release|AVR
+		{5DC862F9-1F2B-4003-A13C-F98896A25C71}.Debug|AVR.ActiveCfg = Debug|AVR
+		{5DC862F9-1F2B-4003-A13C-F98896A25C71}.Debug|AVR.Build.0 = Debug|AVR
+		{5DC862F9-1F2B-4003-A13C-F98896A25C71}.Release|AVR.ActiveCfg = Release|AVR
+		{5DC862F9-1F2B-4003-A13C-F98896A25C71}.Release|AVR.Build.0 = Release|AVR
+		{94121232-E28D-4BC3-9409-835F73063BF8}.Debug|AVR.ActiveCfg = Debug|AVR
+		{94121232-E28D-4BC3-9409-835F73063BF8}.Debug|AVR.Build.0 = Debug|AVR
+		{94121232-E28D-4BC3-9409-835F73063BF8}.Release|AVR.ActiveCfg = Release|AVR
+		{94121232-E28D-4BC3-9409-835F73063BF8}.Release|AVR.Build.0 = Release|AVR
+		{6C98F4CB-932F-420E-802D-416A3CF97A9C}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6C98F4CB-932F-420E-802D-416A3CF97A9C}.Debug|AVR.Build.0 = Debug|AVR
+		{6C98F4CB-932F-420E-802D-416A3CF97A9C}.Release|AVR.ActiveCfg = Release|AVR
+		{6C98F4CB-932F-420E-802D-416A3CF97A9C}.Release|AVR.Build.0 = Release|AVR
+		{CA6D1D7D-A372-49F8-92EC-DBF7AEA4D31A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CA6D1D7D-A372-49F8-92EC-DBF7AEA4D31A}.Debug|AVR.Build.0 = Debug|AVR
+		{CA6D1D7D-A372-49F8-92EC-DBF7AEA4D31A}.Release|AVR.ActiveCfg = Release|AVR
+		{CA6D1D7D-A372-49F8-92EC-DBF7AEA4D31A}.Release|AVR.Build.0 = Release|AVR
+		{7FBF9253-D40B-426F-867E-C9800CBB0426}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7FBF9253-D40B-426F-867E-C9800CBB0426}.Debug|AVR.Build.0 = Debug|AVR
+		{7FBF9253-D40B-426F-867E-C9800CBB0426}.Release|AVR.ActiveCfg = Release|AVR
+		{7FBF9253-D40B-426F-867E-C9800CBB0426}.Release|AVR.Build.0 = Release|AVR
+		{D5D544AD-7A44-4E4D-B760-620A5E3FE87D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D5D544AD-7A44-4E4D-B760-620A5E3FE87D}.Debug|AVR.Build.0 = Debug|AVR
+		{D5D544AD-7A44-4E4D-B760-620A5E3FE87D}.Release|AVR.ActiveCfg = Release|AVR
+		{D5D544AD-7A44-4E4D-B760-620A5E3FE87D}.Release|AVR.Build.0 = Release|AVR
+		{FFC0D6C3-A898-42EA-8077-8DEC4130B2C6}.Debug|AVR.ActiveCfg = Debug|AVR
+		{FFC0D6C3-A898-42EA-8077-8DEC4130B2C6}.Debug|AVR.Build.0 = Debug|AVR
+		{FFC0D6C3-A898-42EA-8077-8DEC4130B2C6}.Release|AVR.ActiveCfg = Release|AVR
+		{FFC0D6C3-A898-42EA-8077-8DEC4130B2C6}.Release|AVR.Build.0 = Release|AVR
+		{E3638771-D11F-4223-9231-6FBD853729D9}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E3638771-D11F-4223-9231-6FBD853729D9}.Debug|AVR.Build.0 = Debug|AVR
+		{E3638771-D11F-4223-9231-6FBD853729D9}.Release|AVR.ActiveCfg = Release|AVR
+		{E3638771-D11F-4223-9231-6FBD853729D9}.Release|AVR.Build.0 = Release|AVR
+		{60907B85-D7F6-4935-A02F-F0F2D9A51631}.Debug|AVR.ActiveCfg = Debug|AVR
+		{60907B85-D7F6-4935-A02F-F0F2D9A51631}.Debug|AVR.Build.0 = Debug|AVR
+		{60907B85-D7F6-4935-A02F-F0F2D9A51631}.Release|AVR.ActiveCfg = Release|AVR
+		{60907B85-D7F6-4935-A02F-F0F2D9A51631}.Release|AVR.Build.0 = Release|AVR
+		{888B6182-14CA-4C60-AB00-330308FC10B2}.Debug|AVR.ActiveCfg = Debug|AVR
+		{888B6182-14CA-4C60-AB00-330308FC10B2}.Debug|AVR.Build.0 = Debug|AVR
+		{888B6182-14CA-4C60-AB00-330308FC10B2}.Release|AVR.ActiveCfg = Release|AVR
+		{888B6182-14CA-4C60-AB00-330308FC10B2}.Release|AVR.Build.0 = Release|AVR
+		{D03EDE80-0D5D-4AD0-9FEB-A7EF6FEC54F9}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D03EDE80-0D5D-4AD0-9FEB-A7EF6FEC54F9}.Debug|AVR.Build.0 = Debug|AVR
+		{D03EDE80-0D5D-4AD0-9FEB-A7EF6FEC54F9}.Release|AVR.ActiveCfg = Release|AVR
+		{D03EDE80-0D5D-4AD0-9FEB-A7EF6FEC54F9}.Release|AVR.Build.0 = Release|AVR
+		{96DDC7DE-91A2-4D65-8705-F15BD34F766A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{96DDC7DE-91A2-4D65-8705-F15BD34F766A}.Debug|AVR.Build.0 = Debug|AVR
+		{96DDC7DE-91A2-4D65-8705-F15BD34F766A}.Release|AVR.ActiveCfg = Release|AVR
+		{96DDC7DE-91A2-4D65-8705-F15BD34F766A}.Release|AVR.Build.0 = Release|AVR
+		{D43F6907-E476-4E30-BE37-1FDD706BBA60}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D43F6907-E476-4E30-BE37-1FDD706BBA60}.Debug|AVR.Build.0 = Debug|AVR
+		{D43F6907-E476-4E30-BE37-1FDD706BBA60}.Release|AVR.ActiveCfg = Release|AVR
+		{D43F6907-E476-4E30-BE37-1FDD706BBA60}.Release|AVR.Build.0 = Release|AVR
+		{7F2AE653-C998-498E-99FF-800159E7939B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7F2AE653-C998-498E-99FF-800159E7939B}.Debug|AVR.Build.0 = Debug|AVR
+		{7F2AE653-C998-498E-99FF-800159E7939B}.Release|AVR.ActiveCfg = Release|AVR
+		{7F2AE653-C998-498E-99FF-800159E7939B}.Release|AVR.Build.0 = Release|AVR
+		{03DC9260-1F58-48AF-A6F2-0A98881BAD96}.Debug|AVR.ActiveCfg = Debug|AVR
+		{03DC9260-1F58-48AF-A6F2-0A98881BAD96}.Debug|AVR.Build.0 = Debug|AVR
+		{03DC9260-1F58-48AF-A6F2-0A98881BAD96}.Release|AVR.ActiveCfg = Release|AVR
+		{03DC9260-1F58-48AF-A6F2-0A98881BAD96}.Release|AVR.Build.0 = Release|AVR
+		{8979476B-15A5-44D4-8517-1C9EAE1C0FC7}.Debug|AVR.ActiveCfg = Debug|AVR
+		{8979476B-15A5-44D4-8517-1C9EAE1C0FC7}.Debug|AVR.Build.0 = Debug|AVR
+		{8979476B-15A5-44D4-8517-1C9EAE1C0FC7}.Release|AVR.ActiveCfg = Release|AVR
+		{8979476B-15A5-44D4-8517-1C9EAE1C0FC7}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
