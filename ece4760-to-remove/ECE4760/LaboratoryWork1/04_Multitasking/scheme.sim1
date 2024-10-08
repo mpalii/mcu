@@ -1,0 +1,49 @@
+<circuit version="1.0.0-RC3" rev="1148" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="528,524" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="-8,-21" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="Debug/04_Multitasking.hex" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-2" mainComp="false" Show_id="false" Show_Val="false" Pos="504,540" rotation="0" hflip="1" vflip="1" label="D" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-5" mainComp="false" Show_id="false" Show_Val="false" Pos="608,552" rotation="0" hflip="1" vflip="1" label="Tunnel-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" Rotated="false" />
+
+<item itemtype="FreqMeter" CircId="FreqMeter-7" mainComp="false" Show_id="false" Show_Val="false" Pos="664,552" rotation="0" hflip="1" vflip="1" label="FreqMeter-7" idLabPos="-32,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Filter="0.1 V" />
+
+<item itemtype="Tunnel" CircId="Tunnel-11" mainComp="false" Show_id="false" Show_Val="false" Pos="504,548" rotation="0" hflip="1" vflip="1" label="Tunnel-11" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-12" mainComp="false" Show_id="false" Show_Val="false" Pos="504,556" rotation="0" hflip="1" vflip="1" label="Tunnel-12" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-15" mainComp="false" Show_id="false" Show_Val="false" Pos="608,584" rotation="0" hflip="1" vflip="1" label="Tunnel-15" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" Rotated="false" />
+
+<item itemtype="FreqMeter" CircId="FreqMeter-16" mainComp="false" Show_id="false" Show_Val="false" Pos="664,584" rotation="0" hflip="1" vflip="1" label="FreqMeter-16" idLabPos="-32,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Filter="0.1 V" />
+
+<item itemtype="Tunnel" CircId="Tunnel-22" mainComp="false" Show_id="false" Show_Val="false" Pos="608,616" rotation="0" hflip="1" vflip="1" label="Tunnel-22" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" Rotated="false" />
+
+<item itemtype="FreqMeter" CircId="FreqMeter-23" mainComp="false" Show_id="false" Show_Val="false" Pos="664,616" rotation="0" hflip="1" vflip="1" label="FreqMeter-23" idLabPos="-32,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Filter="0.1 V" />
+
+<item itemtype="Tunnel" CircId="Tunnel-25" mainComp="false" Show_id="false" Show_Val="false" Pos="504,564" rotation="0" hflip="1" vflip="1" label="Tunnel-25" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" Rotated="false" />
+
+<item itemtype="Push" CircId="Push-27" mainComp="false" Show_id="false" Show_Val="false" Pos="460,584" rotation="90" hflip="1" vflip="1" label="Push-27" idLabPos="-12,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1 _Poles" />
+
+<item itemtype="Tunnel" CircId="Tunnel-28" mainComp="false" Show_id="false" Show_Val="false" Pos="460,532" rotation="90" hflip="1" vflip="1" label="Tunnel-28" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" Rotated="false" />
+
+<item itemtype="Ground" CircId="Ground-29" mainComp="false" Show_id="false" Show_Val="false" Pos="460,652" rotation="0" hflip="1" vflip="1" label="Ground-29" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Connector" uid="connector-17" startpinid="Tunnel-2-pin" endpinid="mega328-1-PORTD0" pointList="504,540,520,540" />
+
+<item itemtype="Connector" uid="connector-18" startpinid="Tunnel-5-pin" endpinid="FreqMeter-7-lPin" pointList="608,552,624,552" />
+
+<item itemtype="Connector" uid="connector-19" startpinid="Tunnel-12-pin" endpinid="mega328-1-PORTD2" pointList="504,556,520,556" />
+
+<item itemtype="Connector" uid="connector-20" startpinid="mega328-1-PORTD1" endpinid="Tunnel-11-pin" pointList="520,548,504,548" />
+
+<item itemtype="Connector" uid="connector-21" startpinid="Tunnel-15-pin" endpinid="FreqMeter-16-lPin" pointList="608,584,624,584" />
+
+<item itemtype="Connector" uid="Connector-24" startpinid="Tunnel-22-pin" endpinid="FreqMeter-23-lPin" pointList="608,616,624,616" />
+
+<item itemtype="Connector" uid="Connector-26" startpinid="Tunnel-25-pin" endpinid="mega328-1-PORTD3" pointList="504,564,520,564" />
+
+<item itemtype="Connector" uid="Connector-30" startpinid="Tunnel-28-pin" endpinid="Push-27-pinP0" pointList="460,532,460,568" />
+
+<item itemtype="Connector" uid="Connector-31" startpinid="Push-27-switch0pinN" endpinid="Ground-29-Gnd" pointList="460,600,460,636" />
+
+</circuit>

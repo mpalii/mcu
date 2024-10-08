@@ -1,0 +1,71 @@
+<circuit version="1.0.0-RC3" rev="1148" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="544,520" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="-8,-21" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="Debug/02_TypeLayout.hex" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="LedBar" CircId="LedBar-10" mainComp="false" Show_id="false" Show_Val="false" Pos="444,556" rotation="90" hflip="1" vflip="1" label="LedBar-10" idLabPos="-16,-44" labelrot="0" valLabPos="-16,-56" valLabRot="0" Size="4 Leds" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ω" />
+
+<item itemtype="Tunnel" CircId="Tunnel-11" mainComp="false" Show_id="false" Show_Val="false" Pos="520,536" rotation="0" hflip="1" vflip="1" label="Tunnel-11" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-12" mainComp="false" Show_id="false" Show_Val="false" Pos="520,544" rotation="0" hflip="1" vflip="1" label="Tunnel-12" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-13" mainComp="false" Show_id="false" Show_Val="false" Pos="520,552" rotation="0" hflip="1" vflip="1" label="Tunnel-13" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-14" mainComp="false" Show_id="false" Show_Val="false" Pos="520,560" rotation="0" hflip="1" vflip="1" label="Tunnel-14" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-30" mainComp="false" Show_id="false" Show_Val="false" Pos="444,524" rotation="90" hflip="1" vflip="1" label="Tunnel-30" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D3" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-31" mainComp="false" Show_id="false" Show_Val="false" Pos="452,524" rotation="90" hflip="1" vflip="1" label="Tunnel-31" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D2" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-32" mainComp="false" Show_id="false" Show_Val="false" Pos="460,524" rotation="90" hflip="1" vflip="1" label="Tunnel-32" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D1" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-33" mainComp="false" Show_id="false" Show_Val="false" Pos="468,524" rotation="90" hflip="1" vflip="1" label="Tunnel-33" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="D0" Rotated="false" />
+
+<item itemtype="Ground" CircId="Ground-47" mainComp="false" Show_id="false" Show_Val="false" Pos="468,668" rotation="0" hflip="1" vflip="1" label="Ground-47" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="ResistorDip" CircId="ResistorDip-71" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="468,604" rotation="-90" hflip="1" vflip="1" label="ResistorDip-71" idLabPos="-24,-40" labelrot="0" valLabPos="5,-26" valLabRot="90" Resistance="300 Ω" Size="4 Resist." />
+
+<item itemtype="Node" CircId="Node-78" mainComp="false" Pos="468,636" />
+
+<item itemtype="Node" CircId="Node-81" mainComp="false" Pos="460,636" />
+
+<item itemtype="Node" CircId="Node-84" mainComp="false" Pos="452,636" />
+
+<item itemtype="Connector" uid="connector-48" startpinid="Tunnel-11-pin" endpinid="mega328-1-PORTD0" pointList="520,536,536,536" />
+
+<item itemtype="Connector" uid="connector-49" startpinid="mega328-1-PORTD1" endpinid="Tunnel-12-pin" pointList="536,544,520,544" />
+
+<item itemtype="Connector" uid="connector-50" startpinid="Tunnel-13-pin" endpinid="mega328-1-PORTD2" pointList="520,552,536,552" />
+
+<item itemtype="Connector" uid="connector-51" startpinid="Tunnel-14-pin" endpinid="mega328-1-PORTD3" pointList="520,560,536,560" />
+
+<item itemtype="Connector" uid="connector-52" startpinid="Tunnel-30-pin" endpinid="LedBar-10-led3-pinP" pointList="444,524,444,540" />
+
+<item itemtype="Connector" uid="connector-53" startpinid="Tunnel-31-pin" endpinid="LedBar-10-led2-pinP" pointList="452,524,452,540" />
+
+<item itemtype="Connector" uid="connector-54" startpinid="Tunnel-32-pin" endpinid="LedBar-10-led1-pinP" pointList="460,524,460,540" />
+
+<item itemtype="Connector" uid="connector-55" startpinid="Tunnel-33-pin" endpinid="LedBar-10-led0-pinP" pointList="468,524,468,540" />
+
+<item itemtype="Connector" uid="Connector-72" startpinid="LedBar-10-led3-pinN" endpinid="ResistorDip-71-resistor0-ePin1" pointList="444,572,444,588" />
+
+<item itemtype="Connector" uid="Connector-73" startpinid="ResistorDip-71-resistor1-ePin3" endpinid="LedBar-10-led2-pinN" pointList="452,588,452,572" />
+
+<item itemtype="Connector" uid="Connector-74" startpinid="LedBar-10-led1-pinN" endpinid="ResistorDip-71-resistor2-ePin5" pointList="460,572,460,588" />
+
+<item itemtype="Connector" uid="Connector-75" startpinid="LedBar-10-led0-pinN" endpinid="ResistorDip-71-resistor3-ePin7" pointList="468,572,468,588" />
+
+<item itemtype="Connector" uid="Connector-76" startpinid="ResistorDip-71-resistor3-ePin6" endpinid="Node-78-0" pointList="468,620,468,636" />
+
+<item itemtype="Connector" uid="Connector-77" startpinid="ResistorDip-71-resistor2-ePin4" endpinid="Node-81-0" pointList="460,620,460,636" />
+
+<item itemtype="Connector" uid="Connector-79" startpinid="Node-78-2" endpinid="Ground-47-Gnd" pointList="468,636,468,652" />
+
+<item itemtype="Connector" uid="Connector-80" startpinid="ResistorDip-71-resistor1-ePin2" endpinid="Node-84-0" pointList="452,620,452,636" />
+
+<item itemtype="Connector" uid="Connector-82" startpinid="Node-81-2" endpinid="Node-78-1" pointList="460,636,468,636" />
+
+<item itemtype="Connector" uid="Connector-83" startpinid="ResistorDip-71-resistor0-ePin0" endpinid="Node-84-1" pointList="444,620,444,636,452,636" />
+
+<item itemtype="Connector" uid="Connector-85" startpinid="Node-84-2" endpinid="Node-81-1" pointList="452,636,460,636" />
+
+</circuit>

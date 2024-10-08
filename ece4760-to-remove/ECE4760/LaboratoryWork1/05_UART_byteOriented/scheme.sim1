@@ -1,0 +1,41 @@
+<circuit version="1.0.0-RC3" rev="1148" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="544,520" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="-8,-21" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="Debug/03_Timer_0.hex" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-2" mainComp="false" Show_id="false" Show_Val="false" Pos="516,632" rotation="0" hflip="1" vflip="1" label="D" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="B0" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-5" mainComp="false" Show_id="false" Show_Val="false" Pos="452,524" rotation="90" hflip="1" vflip="1" label="Tunnel-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="B0" Rotated="false" />
+
+<item itemtype="Led" CircId="Led-13" mainComp="false" Show_id="false" Show_Val="false" Pos="452,556" rotation="90" hflip="1" vflip="1" label="Led-13" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ω" />
+
+<item itemtype="Resistor" CircId="Resistor-14" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="452,604" rotation="90" hflip="1" vflip="1" label="Resistor-14" idLabPos="-16,-24" labelrot="0" valLabPos="-12,6" valLabRot="0" Resistance="300 Ω" />
+
+<item itemtype="Ground" CircId="Ground-15" mainComp="false" Show_id="false" Show_Val="false" Pos="452,652" rotation="0" hflip="1" vflip="1" label="Ground-15" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="SerialPort" CircId="SerialPort-19" mainComp="false" Show_id="false" Show_Val="false" Pos="564,668" rotation="0" hflip="1" vflip="1" label="SerialPort-19" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="UART" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
+
+<item itemtype="Tunnel" CircId="Tunnel-20" mainComp="false" Show_id="false" Show_Val="false" Pos="516,536" rotation="0" hflip="1" vflip="1" label="Tunnel-20" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="RX" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-21" mainComp="false" Show_id="false" Show_Val="false" Pos="516,544" rotation="0" hflip="1" vflip="1" label="Tunnel-21" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="TX" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-22" mainComp="false" Show_id="false" Show_Val="false" Pos="508,660" rotation="0" hflip="1" vflip="1" label="Tunnel-22" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="RX" Rotated="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-23" mainComp="false" Show_id="false" Show_Val="false" Pos="508,676" rotation="0" hflip="1" vflip="1" label="Tunnel-23" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="TX" Rotated="false" />
+
+<item itemtype="Connector" uid="connector-24" startpinid="Tunnel-5-pin" endpinid="Led-13-lPin" pointList="452,524,452,540" />
+
+<item itemtype="Connector" uid="connector-25" startpinid="Led-13-rPin" endpinid="Resistor-14-lPin" pointList="452,572,452,588" />
+
+<item itemtype="Connector" uid="connector-26" startpinid="Resistor-14-rPin" endpinid="Ground-15-Gnd" pointList="452,620,452,636" />
+
+<item itemtype="Connector" uid="connector-27" startpinid="Tunnel-20-pin" endpinid="mega328-1-PORTD0" pointList="516,536,536,536" />
+
+<item itemtype="Connector" uid="connector-28" startpinid="Tunnel-21-pin" endpinid="mega328-1-PORTD1" pointList="516,544,536,544" />
+
+<item itemtype="Connector" uid="connector-29" startpinid="Tunnel-2-pin" endpinid="mega328-1-PORTB0" pointList="516,632,536,632" />
+
+<item itemtype="Connector" uid="connector-30" startpinid="Tunnel-22-pin" endpinid="SerialPort-19-pin0" pointList="508,660,524,660" />
+
+<item itemtype="Connector" uid="Connector-31" startpinid="Tunnel-23-pin" endpinid="SerialPort-19-pin1" pointList="508,676,524,676" />
+
+</circuit>

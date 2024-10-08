@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "01_Delay", "01_Delay\01_Delay.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "02_TypeLayout", "02_TypeLayout\02_TypeLayout.cproj", "{DC537E77-38C6-4101-92D3-570746F6C9EF}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "03_Timer_0", "03_Timer_0\03_Timer_0.cproj", "{E3D96B45-D10A-4E7E-B35D-E079BA4F59CF}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "04_Multitasking", "04_Multitasking\04_Multitasking.cproj", "{3C20DA2C-F0A4-44EC-92AD-4EC7EE768001}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "05_UART_byteOriented", "05_UART_byteOriented\05_UART_byteOriented.cproj", "{77344795-B922-4D32-AE61-C7C4027D4739}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "06_UART_fileOriented", "06_UART_fileOriented\06_UART_fileOriented.cproj", "{40B08A22-EC21-457A-873C-4BCA603DEDF6}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "07_UART_nonBlocking", "07_UART_nonBlocking\07_UART_nonBlocking.cproj", "{CCFC0675-CA53-458D-A18C-35556561A483}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "08_UART_speedTest", "08_UART_speedTest\08_UART_speedTest.cproj", "{544B384A-A9C9-480A-8E7D-A7E1B5BCE142}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "09_EEPROM_random", "09_EEPROM_random\09_EEPROM_random.cproj", "{41E8F020-8268-47EB-B7CF-BE9B7F555AB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{DC537E77-38C6-4101-92D3-570746F6C9EF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DC537E77-38C6-4101-92D3-570746F6C9EF}.Debug|AVR.Build.0 = Debug|AVR
+		{DC537E77-38C6-4101-92D3-570746F6C9EF}.Release|AVR.ActiveCfg = Release|AVR
+		{DC537E77-38C6-4101-92D3-570746F6C9EF}.Release|AVR.Build.0 = Release|AVR
+		{E3D96B45-D10A-4E7E-B35D-E079BA4F59CF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E3D96B45-D10A-4E7E-B35D-E079BA4F59CF}.Debug|AVR.Build.0 = Debug|AVR
+		{E3D96B45-D10A-4E7E-B35D-E079BA4F59CF}.Release|AVR.ActiveCfg = Release|AVR
+		{E3D96B45-D10A-4E7E-B35D-E079BA4F59CF}.Release|AVR.Build.0 = Release|AVR
+		{3C20DA2C-F0A4-44EC-92AD-4EC7EE768001}.Debug|AVR.ActiveCfg = Debug|AVR
+		{3C20DA2C-F0A4-44EC-92AD-4EC7EE768001}.Debug|AVR.Build.0 = Debug|AVR
+		{3C20DA2C-F0A4-44EC-92AD-4EC7EE768001}.Release|AVR.ActiveCfg = Release|AVR
+		{3C20DA2C-F0A4-44EC-92AD-4EC7EE768001}.Release|AVR.Build.0 = Release|AVR
+		{77344795-B922-4D32-AE61-C7C4027D4739}.Debug|AVR.ActiveCfg = Debug|AVR
+		{77344795-B922-4D32-AE61-C7C4027D4739}.Debug|AVR.Build.0 = Debug|AVR
+		{77344795-B922-4D32-AE61-C7C4027D4739}.Release|AVR.ActiveCfg = Release|AVR
+		{77344795-B922-4D32-AE61-C7C4027D4739}.Release|AVR.Build.0 = Release|AVR
+		{40B08A22-EC21-457A-873C-4BCA603DEDF6}.Debug|AVR.ActiveCfg = Debug|AVR
+		{40B08A22-EC21-457A-873C-4BCA603DEDF6}.Debug|AVR.Build.0 = Debug|AVR
+		{40B08A22-EC21-457A-873C-4BCA603DEDF6}.Release|AVR.ActiveCfg = Release|AVR
+		{40B08A22-EC21-457A-873C-4BCA603DEDF6}.Release|AVR.Build.0 = Release|AVR
+		{CCFC0675-CA53-458D-A18C-35556561A483}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CCFC0675-CA53-458D-A18C-35556561A483}.Debug|AVR.Build.0 = Debug|AVR
+		{CCFC0675-CA53-458D-A18C-35556561A483}.Release|AVR.ActiveCfg = Release|AVR
+		{CCFC0675-CA53-458D-A18C-35556561A483}.Release|AVR.Build.0 = Release|AVR
+		{544B384A-A9C9-480A-8E7D-A7E1B5BCE142}.Debug|AVR.ActiveCfg = Debug|AVR
+		{544B384A-A9C9-480A-8E7D-A7E1B5BCE142}.Debug|AVR.Build.0 = Debug|AVR
+		{544B384A-A9C9-480A-8E7D-A7E1B5BCE142}.Release|AVR.ActiveCfg = Release|AVR
+		{544B384A-A9C9-480A-8E7D-A7E1B5BCE142}.Release|AVR.Build.0 = Release|AVR
+		{41E8F020-8268-47EB-B7CF-BE9B7F555AB3}.Debug|AVR.ActiveCfg = Debug|AVR
+		{41E8F020-8268-47EB-B7CF-BE9B7F555AB3}.Debug|AVR.Build.0 = Debug|AVR
+		{41E8F020-8268-47EB-B7CF-BE9B7F555AB3}.Release|AVR.ActiveCfg = Release|AVR
+		{41E8F020-8268-47EB-B7CF-BE9B7F555AB3}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
