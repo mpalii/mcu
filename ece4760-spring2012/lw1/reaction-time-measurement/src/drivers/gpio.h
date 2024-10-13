@@ -53,7 +53,7 @@
 /*
  * Hardware pin mapping
  */
-#define _GPIO_UNUSED_01         _PA0
+#define LED                     _PA0
 #define _GPIO_UNUSED_02         _PA1
 #define _GPIO_UNUSED_03         _PA2
 #define _GPIO_UNUSED_04         _PA3
@@ -148,41 +148,10 @@ void init_gpio(void)
     MCUCR |= _BV(JTD);
 
     // Main pin configuration
-    gpio_set_output(_GPIO_UNUSED_01);
-    gpio_set_output(_GPIO_UNUSED_02);
-    gpio_set_output(_GPIO_UNUSED_03);
-    gpio_set_output(_GPIO_UNUSED_04);
-    gpio_set_output(_GPIO_UNUSED_05);
-    gpio_set_output(_GPIO_UNUSED_06);
-    gpio_set_output(_GPIO_UNUSED_07);
-    gpio_set_output(_GPIO_UNUSED_08);
+    /* TODO */
 
-    gpio_set_output(_GPIO_UNUSED_09);
-    gpio_set_output(_GPIO_UNUSED_10);
-    gpio_set_output(_GPIO_UNUSED_11);
-    gpio_set_output(_GPIO_UNUSED_12);
-    gpio_set_output(_GPIO_UNUSED_13);
-    gpio_set_output(_GPIO_UNUSED_14);
-    gpio_set_output(_GPIO_UNUSED_15);
-    gpio_set_output(_GPIO_UNUSED_16);
-
-    gpio_set_output(_GPIO_UNUSED_17);
-    gpio_set_output(_GPIO_UNUSED_18);
-    gpio_set_output(_GPIO_UNUSED_19);
-    gpio_set_output(_GPIO_UNUSED_20);
-    gpio_set_output(_GPIO_UNUSED_21);
-    gpio_set_output(_GPIO_UNUSED_22);
-    gpio_set_output(_GPIO_UNUSED_23);
-    gpio_set_output(_GPIO_UNUSED_24);
-
-    gpio_set_output(_GPIO_UNUSED_25);
-    gpio_set_output(_GPIO_UNUSED_26);
-    gpio_set_output(_GPIO_UNUSED_27);
-    gpio_set_output(_GPIO_UNUSED_28);
-    gpio_set_output(_GPIO_UNUSED_29);
-    gpio_set_output(_GPIO_UNUSED_30);
-    gpio_set_output(_GPIO_UNUSED_31);
-    gpio_set_output(_GPIO_UNUSED_32);
+    // Turn on built in led
+    gpio_set_output(LED);
 }
 
 #endif /* GPIO_H_ */
