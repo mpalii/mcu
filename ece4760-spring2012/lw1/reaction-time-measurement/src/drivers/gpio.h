@@ -87,7 +87,7 @@ void init_gpio(void);
 #define _GPIO_UNUSED_29         _PD4
 #define _GPIO_UNUSED_30         _PD5
 #define _GPIO_UNUSED_31         _PD6
-#define _GPIO_UNUSED_32         _PD7
+#define BUZZER                  _PD7    // AKA OC2A
 
 /*
  * Addresses of DDRx, PORTx and PINx registers have the same offset and equals to 3.

@@ -16,7 +16,7 @@ void init_gpio(void)
     MCUCR |= _BV(JTD);
 
     // Main pin configuration
-    /* TODO */
+    _gpio_set_output(BUZZER);
 
     // Turn on built in led
     _gpio_set_output(LED);

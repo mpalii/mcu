@@ -9,11 +9,15 @@
 #include <stdbool.h>
 #include "drivers/gpio.h"
 #include "drivers/uart.h"
+#include "drivers/timer2.h"
+
+#include <util/delay.h>
 
 int main(void)
 {
     init_gpio();
     init_uart();
+    init_timer2();
 
     while (true)
     {

@@ -18,7 +18,8 @@ SOURCES = 					\
     src/main.c 				\
 	src/drivers/gpio.c		\
 	src/drivers/uart.c		\
-	src/drivers/timer0.c
+	src/drivers/timer0.c	\
+	src/drivers/timer2.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
