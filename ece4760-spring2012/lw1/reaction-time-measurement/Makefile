@@ -13,8 +13,9 @@ AVROBJDUMP  = avr-objdump --disassemble
 AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 
 # Source files
-SOURCES = \
-    src/main.c
+SOURCES = 					\
+    src/main.c 				\
+	src/drivers/gpio.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))

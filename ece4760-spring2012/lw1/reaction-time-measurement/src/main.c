@@ -8,6 +8,7 @@
 
 #define F_CPU (16000000UL)
  
+#include <stdbool.h>
 #include "drivers/gpio.h"
 
 int main(void)
