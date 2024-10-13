@@ -20,6 +20,9 @@ void init_timer2(void)
 	
     // TCCR2B - Timer/Counter2 Control Register channel B - clkT2S/256
     TCCR2B |= _BV(CS22) | _BV(CS21);
+
+    // Configure GPIO
+    _gpio_set_output(BUZZER);
 }
 
 void timer2_start(void)

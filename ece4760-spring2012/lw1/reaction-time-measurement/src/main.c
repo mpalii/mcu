@@ -10,6 +10,7 @@
 #include "drivers/gpio.h"
 #include "drivers/uart.h"
 #include "drivers/timer2.h"
+#include "drivers/led.h"
 
 #include <util/delay.h>
 
@@ -18,6 +19,7 @@ int main(void)
     init_gpio();
     init_uart();
     init_timer2();
+    init_led();
 
     while (true)
     {
