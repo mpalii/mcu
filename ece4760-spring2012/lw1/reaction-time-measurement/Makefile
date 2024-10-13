@@ -4,7 +4,7 @@ DESTINATION = firmware
 DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
-DEFINES	    = $(addprefix -D, F_CPU=16000000UL BAUD_RATE=9600UL)
+DEFINES	    = $(addprefix -D, F_CPU=18432000UL BAUD_RATE=9600UL)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
@@ -17,7 +17,8 @@ AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 SOURCES = 					\
     src/main.c 				\
 	src/drivers/gpio.c		\
-	src/drivers/uart.c
+	src/drivers/uart.c		\
+	src/drivers/timer0.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
