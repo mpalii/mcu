@@ -1,4 +1,4 @@
-#include <avr/io.h>
+#include "gpio.h"
 
 /**
  * @brief Timer 0 is used as a SYSTEM TIMER with 0.001s precision

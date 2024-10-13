@@ -14,7 +14,7 @@
     #define BAUD_RATE_RATIO 16UL
 #endif       
 
-#include <avr/io.h>
+#include "gpio.h"
 
 /**
  * Blocking call, only use during initialization (before SEI)
