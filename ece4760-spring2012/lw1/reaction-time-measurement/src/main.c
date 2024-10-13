@@ -6,14 +6,14 @@
  * @link https://people.ece.cornell.edu/land/courses/ece4760/labs/s2012/lab1.html
  */
 
-#define F_CPU (16000000UL)
- 
 #include <stdbool.h>
 #include "drivers/gpio.h"
+#include "drivers/uart.h"
 
 int main(void)
 {
     init_gpio();
+    init_uart();
 
     while (true)
     {

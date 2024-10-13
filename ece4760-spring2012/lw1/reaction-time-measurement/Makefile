@@ -4,10 +4,11 @@ DESTINATION = firmware
 DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
+DEFINES	    = $(addprefix -D, F_CPU=16000000UL BAUD_RATE=9600UL)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
-AVRGCC      = avr-gcc -mmcu=$(DEVICE) -Os -Wall
+AVRGCC      = avr-gcc -mmcu=$(DEVICE) -Os -Wall $(DEFINES)
 AVROBJCOPY  = avr-objcopy --input-target elf32-avr --output-target ihex --verbose
 AVROBJDUMP  = avr-objdump --disassemble
 AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
@@ -15,7 +16,8 @@ AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 # Source files
 SOURCES = 					\
     src/main.c 				\
-	src/drivers/gpio.c
+	src/drivers/gpio.c		\
+	src/drivers/uart.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))

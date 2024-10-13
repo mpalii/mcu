@@ -5,8 +5,6 @@
  */
 
 #include <avr/io.h>
-#include <stdbool.h>
-#include <stdint.h>
 
 /*
  * Generic pin map table
@@ -77,8 +75,8 @@
 #define _GPIO_UNUSED_23         _PC6
 #define _GPIO_UNUSED_24         _PC7
 
-#define _GPIO_UNUSED_25         _PD0
-#define _GPIO_UNUSED_26         _PD1
+#define RX                      _PD0
+#define TX                      _PD1
 #define _GPIO_UNUSED_27         _PD2
 #define _GPIO_UNUSED_28         _PD3
 #define _GPIO_UNUSED_29         _PD4
