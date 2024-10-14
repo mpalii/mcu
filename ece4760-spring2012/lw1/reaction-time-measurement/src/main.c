@@ -13,6 +13,7 @@
 #include "drivers/led.h"
 #include "drivers/button.h"
 #include "drivers/reset.h"
+#include "drivers/timer1.h"
 
 int main(void)
 {
@@ -22,6 +23,7 @@ int main(void)
     init_led();
     init_button();
     init_reset();
+    init_timer1();
 
     while (true)
     {
