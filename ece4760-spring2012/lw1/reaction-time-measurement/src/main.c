@@ -14,6 +14,7 @@
 #include "drivers/button.h"
 #include "drivers/reset.h"
 #include "drivers/timer1.h"
+#include "drivers/lcd.h"
 
 int main(void)
 {
@@ -24,6 +25,7 @@ int main(void)
     init_button();
     init_reset();
     init_timer1();
+    init_lcd();
 
     while (true)
     {

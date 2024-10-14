@@ -71,22 +71,22 @@ void init_gpio(void);
 #define _GPIO_UNUSED_15         _PB6
 #define _GPIO_UNUSED_16         _PB7
 
-#define _GPIO_UNUSED_17         _PC0
-#define _GPIO_UNUSED_18         _PC1
-#define _GPIO_UNUSED_19         _PC2
-#define _GPIO_UNUSED_20         _PC3
-#define _GPIO_UNUSED_21         _PC4
-#define _GPIO_UNUSED_22         _PC5
-#define _GPIO_UNUSED_23         _PC6
-#define _GPIO_UNUSED_24         _PC7
+#define LCD_PD0                 _PC0
+#define LCD_PD1                 _PC1
+#define LCD_PD2                 _PC2
+#define LCD_PD3                 _PC3
+#define LCD_PD4                 _PC4
+#define LCD_PD5                 _PC5
+#define LCD_PD6                 _PC6
+#define LCD_PD7                 _PC7
 
 #define RX                      _PD0
 #define TX                      _PD1
 #define BUTTON                  _PD2    // AKA INT0
 #define _GPIO_UNUSED_28         _PD3
-#define _GPIO_UNUSED_29         _PD4
-#define _GPIO_UNUSED_30         _PD5
-#define _GPIO_UNUSED_31         _PD6
+#define LCD_EN                  _PD4
+#define LCD_RW                  _PD5
+#define LCD_RS                  _PD6
 #define BUZZER                  _PD7    // AKA OC2A
 
 /*
