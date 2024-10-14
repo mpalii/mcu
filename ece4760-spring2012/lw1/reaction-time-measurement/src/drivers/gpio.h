@@ -54,7 +54,7 @@ void init_gpio(void);
  * Hardware pin mapping
  */
 #define LED                     _PA0
-#define _GPIO_UNUSED_02         _PA1
+#define RESET                   _PA1
 #define _GPIO_UNUSED_03         _PA2
 #define _GPIO_UNUSED_04         _PA3
 #define _GPIO_UNUSED_05         _PA4

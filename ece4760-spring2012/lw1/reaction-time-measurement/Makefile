@@ -21,7 +21,8 @@ SOURCES = 					\
 	src/drivers/timer0.c	\
 	src/drivers/timer2.c	\
 	src/drivers/led.c		\
-	src/drivers/button.h
+	src/drivers/button.c	\
+	src/drivers/reset.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
