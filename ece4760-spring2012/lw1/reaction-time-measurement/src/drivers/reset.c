@@ -1,4 +1,5 @@
 #include "gpio.h"
+#include "uart.h"
 #include <stdbool.h>
 #include <avr/eeprom.h>
 
@@ -9,6 +10,8 @@ void init_reset(void)
 {
     _gpio_set_input(RESET);
     _gpio_high(RESET);     // Enable internal pull-up resistor
+
+    uart_transmit("- Reset ready\r\n");
 }
 
 bool reset(void)

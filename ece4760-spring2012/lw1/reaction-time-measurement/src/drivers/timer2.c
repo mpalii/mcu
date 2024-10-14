@@ -1,4 +1,5 @@
 #include "gpio.h"
+#include "uart.h"
 
 /**
  * @brief Timer 2 is used for sound generation with ~880Hz pitch
@@ -23,6 +24,8 @@ void init_timer2(void)
 
     // Configure GPIO
     _gpio_set_output(BUZZER);
+
+    uart_transmit("- Timer 2 ready\r\n");
 }
 
 void timer2_start(void)

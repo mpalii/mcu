@@ -1,4 +1,5 @@
 #include "button.h"
+#include "uart.h"
 #include "gpio.h"
 #include <stdbool.h>
 
@@ -10,6 +11,8 @@ void init_button(void)
     _gpio_high(BUTTON);     // Enable internal pull-up resistor
 
     state = RELEASED;
+
+    uart_transmit("- Button ready\r\n");
 }
 
 enum button_state button_state_get(void)

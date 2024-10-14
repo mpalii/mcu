@@ -17,7 +17,7 @@
 #include "gpio.h"
 
 /**
- * Blocking call, only use during initialization (before SEI)
+ * Blocking method!!!
  */
 void uart_transmit(char* array)
 {
@@ -44,7 +44,7 @@ void init_uart(void)
     UBRR0 = F_CPU / (BAUD_RATE_RATIO * BAUD_RATE) - 1;
 
     #ifdef U2X
-        UCSR0A = _BV(U2X0);
+        UCSR0A |= _BV(U2X0);
     #endif
  
     // Enable transmission only

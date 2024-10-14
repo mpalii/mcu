@@ -1,4 +1,5 @@
 #include "gpio.h"
+#include "uart.h"
 #include <stdbool.h>
 #include <stddef.h>
 #include <util/delay.h>
@@ -157,6 +158,8 @@ void init_lcd(void)
     send_command(0b00000001);	// 'Clear Display'
     while (read_bf_and_ac() & 0x80);
     send_command(0b00000110);	// 'Entry Mode Set' cursor shift to right
+
+    uart_transmit("- LCD ready\r\n");
 }
 
 void lcd_add_to_rendering(char *msg)

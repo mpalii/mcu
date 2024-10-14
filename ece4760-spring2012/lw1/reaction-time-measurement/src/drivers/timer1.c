@@ -1,4 +1,5 @@
 #include "gpio.h"
+#include "uart.h"
 
 /**
  * Actually nothing to init.
@@ -6,7 +7,7 @@
  */
 void init_timer1(void)
 {
-    // NOP
+    uart_transmit("- Timer 1 ready\r\n");
 }
 
 void timer1_start(void)

@@ -4,7 +4,7 @@ DESTINATION = firmware
 DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
-DEFINES	    = $(addprefix -D, F_CPU=18432000UL BAUD_RATE=9600UL)
+DEFINES	    = $(addprefix -D, F_CPU=18432000UL BAUD_RATE=1152000UL)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
@@ -18,13 +18,13 @@ SOURCES = 					\
     src/main.c 				\
 	src/drivers/gpio.c		\
 	src/drivers/uart.c		\
-	src/drivers/timer0.c	\
-	src/drivers/timer2.c	\
 	src/drivers/led.c		\
 	src/drivers/button.c	\
 	src/drivers/reset.c		\
-	src/drivers/timer1.c	\
-	src/drivers/lcd.c
+	src/drivers/lcd.c		\
+	src/drivers/timer0.c	\
+	src/drivers/timer2.c	\
+	src/drivers/timer1.c	
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
