@@ -11,8 +11,7 @@
 #include "drivers/uart.h"
 #include "drivers/timer2.h"
 #include "drivers/led.h"
-
-#include <util/delay.h>
+#include "drivers/button.h"
 
 int main(void)
 {
@@ -20,6 +19,7 @@ int main(void)
     init_uart();
     init_timer2();
     init_led();
+    init_button();
 
     while (true)
     {

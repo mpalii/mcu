@@ -82,7 +82,7 @@ void init_gpio(void);
 
 #define RX                      _PD0
 #define TX                      _PD1
-#define _GPIO_UNUSED_27         _PD2
+#define BUTTON                  _PD2    // AKA INT0
 #define _GPIO_UNUSED_28         _PD3
 #define _GPIO_UNUSED_29         _PD4
 #define _GPIO_UNUSED_30         _PD5
