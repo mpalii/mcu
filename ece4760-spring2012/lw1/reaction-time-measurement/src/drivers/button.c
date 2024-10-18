@@ -10,6 +10,8 @@ void init_button(void)
     _gpio_set_input(BUTTON);
     _gpio_high(BUTTON);     // Enable internal pull-up resistor
 
+    EICRA |= _BV(ISC01);    // The falling edge of INT0 generates asynchronously an interrupt request.
+
     state = RELEASED;
 
     uart_transmit("- Button ready\r\n");

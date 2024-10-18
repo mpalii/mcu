@@ -14,17 +14,28 @@ AVROBJDUMP  = avr-objdump --disassemble
 AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 
 # Source files
-SOURCES = 					\
-    src/main.c 				\
-	src/drivers/gpio.c		\
-	src/drivers/uart.c		\
-	src/drivers/led.c		\
-	src/drivers/button.c	\
-	src/drivers/reset.c		\
-	src/drivers/lcd.c		\
-	src/drivers/timer0.c	\
-	src/drivers/timer2.c	\
-	src/drivers/timer1.c	
+SOURCES = 							\
+    src/main.c 						\
+	src/drivers/gpio.c				\
+	src/drivers/uart.c				\
+	src/drivers/led.c				\
+	src/drivers/button.c			\
+	src/drivers/reset.c				\
+	src/drivers/lcd.c				\
+	src/drivers/timer0.c			\
+	src/drivers/timer2.c			\
+	src/drivers/timer1.c			\
+	src/app/scheduler.c				\
+	src/app/metrics.c				\
+	src/app/state_machine.c			\
+	src/app/state/ready.c			\
+	src/app/state/measuring.c		\
+	src/app/state/false_start.c 	\
+	src/app/state/timeout.c			\
+	src/app/state/result.c			\
+	src/app/tasks/button_handler.c	\
+	src/app/tasks/lcd_renderer.c	\
+	src/app/tasks/state_resolver.c
 
 # Object files
 OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))

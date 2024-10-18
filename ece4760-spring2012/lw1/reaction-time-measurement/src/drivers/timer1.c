@@ -13,7 +13,7 @@ void init_timer1(void)
 void timer1_start(void)
 {
     TCNT1 = 0;
-    TCCR1B |= (_BV(CS12) | _BV(CS10));
+    TCCR1B |= (_BV(CS12) | _BV(CS10));  // 1024 prescaler
 }
 
 uint16_t timer1_stop(void)
