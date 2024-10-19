@@ -1,4 +1,4 @@
-#include "../state_machine.h"
+#include "app/state_machine.h"
 
 void resolve_state(void)
 {

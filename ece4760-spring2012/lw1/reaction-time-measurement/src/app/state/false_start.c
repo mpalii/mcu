@@ -1,25 +1,11 @@
-#include "../state_machine.h"
-#include "../tasks/button_handler.h"
-#include "../../drivers/uart.h"
-#include "../../drivers/lcd.h"
-#include <stdbool.h>
-
-static bool is_ready_for_transition = false;
+#include "app/state_machine.h"
+#include "drivers/uart.h"
+#include "drivers/lcd.h"
 
 e_state handle_false_start_state(void)
 {
-    if (!is_ready_for_transition)
-    {
-        uart_transmit("FALSE START\r\n");
-		lcd_add_to_rendering("\rFALSE START***********");
-		is_ready_for_transition = true;
-    }
-	
-    if (get_button_event() && is_ready_for_transition)
-    {
-        is_ready_for_transition = false;
-        return READY;
-    }
+    uart_transmit("FALSE\r\n");
+    lcd_add_to_rendering("\rFALSE START*****");
 
-    return FALSE_START;
+    return READY;
 }

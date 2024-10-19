@@ -1,4 +1,4 @@
-#include "../../drivers/lcd.h"
+#include "drivers/lcd.h"
 
 void render_lcd(void)
 {

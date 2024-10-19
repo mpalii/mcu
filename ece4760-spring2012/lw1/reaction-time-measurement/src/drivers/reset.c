@@ -7,7 +7,7 @@ void init_reset(void)
     _gpio_set_input(RESET);
     _gpio_high(RESET);     // Enable internal pull-up resistor
 
-    uart_transmit("- Reset ready\r\n");
+    uart_transmit("- RESET ready\r\n");
 }
 
 bool reset_probe(void)

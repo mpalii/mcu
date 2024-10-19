@@ -25,7 +25,7 @@ void init_timer2(void)
     // Configure GPIO
     _gpio_set_output(BUZZER);
 
-    uart_transmit("- Timer 2 ready\r\n");
+    uart_transmit("- TIMER 2 ready\r\n");
 }
 
 void timer2_start(void)

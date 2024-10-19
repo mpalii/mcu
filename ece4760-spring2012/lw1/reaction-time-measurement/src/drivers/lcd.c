@@ -151,13 +151,13 @@ void init_lcd(void)
 
     initialize_by_instructions();
     while (read_bf_and_ac() & 0x80);    
-    send_command(0b00111100);	// 'Function Set' - 8bit mode, 2 lines, 5x8 font
+    send_command(0b00111100);   // 'Function Set' - 8bit mode, 2 lines, 5x8 font
     while (read_bf_and_ac() & 0x80);    
-    send_command(0b00001111);	// 'Display ON/OFF Control' display on, cursor off and not blink    0b00001100
+    send_command(0b00001100);   // 'Display ON/OFF Control' display on, cursor off and not blink
     while (read_bf_and_ac() & 0x80);    
-    send_command(0b00000001);	// 'Clear Display'
+    send_command(0b00000001);   // 'Clear Display'
     while (read_bf_and_ac() & 0x80);
-    send_command(0b00000110);	// 'Entry Mode Set' cursor shift to right
+    send_command(0b00000110);   // 'Entry Mode Set' cursor shift to right
 
     uart_transmit("- LCD ready\r\n");
 }

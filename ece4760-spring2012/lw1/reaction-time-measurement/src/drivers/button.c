@@ -3,18 +3,14 @@
 #include "gpio.h"
 #include <stdbool.h>
 
-static enum button_state state;
+static enum button_state state = RELEASED;
 
 void init_button(void)
 {
     _gpio_set_input(BUTTON);
     _gpio_high(BUTTON);     // Enable internal pull-up resistor
 
-    EICRA |= _BV(ISC01);    // The falling edge of INT0 generates asynchronously an interrupt request.
-
-    state = RELEASED;
-
-    uart_transmit("- Button ready\r\n");
+    uart_transmit("- BUTTON ready\r\n");
 }
 
 enum button_state button_state_get(void)

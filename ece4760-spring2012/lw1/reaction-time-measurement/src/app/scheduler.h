@@ -1,7 +1,6 @@
 #ifndef SCHEDULER_H_
 #define SCHEDULER_H_
 
-// void init_scheduler(void);
-void scheduler_launch(void);
+void launch_scheduler(void);
 
 #endif /* SCHEDULER_H_ */

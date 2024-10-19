@@ -4,11 +4,12 @@ DESTINATION = firmware
 DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
-DEFINES	    = $(addprefix -D, F_CPU=18432000UL BAUD_RATE=1152000UL)
+INCLUDES	= $(addprefix -I, ./src/)
+DEFINES	    = $(addprefix -D, F_CPU=20000000ULL BAUD_RATE=1250000UL DEFAULT_SCORE=9999UL SCORE_EEPROM_ADDRESS=0x0000)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
-AVRGCC      = avr-gcc -mmcu=$(DEVICE) -Os -Wall $(DEFINES)
+AVRGCC      = avr-gcc -mmcu=$(DEVICE) -Os -Wall $(DEFINES) $(INCLUDES)
 AVROBJCOPY  = avr-objcopy --input-target elf32-avr --output-target ihex --verbose
 AVROBJDUMP  = avr-objdump --disassemble
 AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
@@ -16,6 +17,7 @@ AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 # Source files
 SOURCES = 							\
     src/main.c 						\
+									\
 	src/drivers/gpio.c				\
 	src/drivers/uart.c				\
 	src/drivers/led.c				\
@@ -24,21 +26,28 @@ SOURCES = 							\
 	src/drivers/lcd.c				\
 	src/drivers/timer0.c			\
 	src/drivers/timer2.c			\
-	src/drivers/timer1.c			\
-	src/app/scheduler.c				\
+									\
+	src/app/launcher.c				\
 	src/app/metrics.c				\
+	src/app/events.c				\
+									\
+	src/app/scheduler.c				\
+	src/app/task/button_handler.c	\
+	src/app/task/lcd_renderer.c		\
+	src/app/task/state_resolver.c	\
+									\
 	src/app/state_machine.c			\
+	src/app/state/pre_ready.c		\
 	src/app/state/ready.c			\
+	src/app/state/pre_wait.c		\
+	src/app/state/wait.c			\
 	src/app/state/measuring.c		\
+	src/app/state/result.c			\
 	src/app/state/false_start.c 	\
 	src/app/state/timeout.c			\
-	src/app/state/result.c			\
-	src/app/tasks/button_handler.c	\
-	src/app/tasks/lcd_renderer.c	\
-	src/app/tasks/state_resolver.c
 
 # Object files
-OBJECTS = $(patsubst ./src/%.c, ./target/%.o, $(SOURCES))
+OBJECTS = $(patsubst src/%.c, target/%.o, $(SOURCES))
 
 build: clean $(OBJECTS)
 	@mkdir -p ./target  # Create the target directory if it doesn't exist
