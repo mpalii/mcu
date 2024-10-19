@@ -5,7 +5,7 @@ DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
 INCLUDES	= $(addprefix -I, ./src/)
-DEFINES	    = $(addprefix -D, F_CPU=20000000ULL BAUD_RATE=1250000UL DEFAULT_SCORE=9999UL SCORE_EEPROM_ADDRESS=0x0000)
+DEFINES	    = $(addprefix -D, F_CPU=20000000ULL BAUD_RATE=9600UL U2X DEFAULT_SCORE=9999UL SCORE_EEPROM_ADDRESS=0x0000)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
@@ -36,12 +36,14 @@ SOURCES = 							\
 	src/app/task/button_handler.c	\
 	src/app/task/lcd_renderer.c		\
 	src/app/task/state_resolver.c	\
+	src/app/task/serial_writer.c	\
 									\
 	src/app/state_machine.c			\
 	src/app/state/pre_ready.c		\
 	src/app/state/ready.c			\
 	src/app/state/pre_wait.c		\
 	src/app/state/wait.c			\
+	src/app/state/pre_measuring.c	\
 	src/app/state/measuring.c		\
 	src/app/state/result.c			\
 	src/app/state/false_start.c 	\

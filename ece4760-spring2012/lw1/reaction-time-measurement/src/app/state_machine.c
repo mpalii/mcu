@@ -3,6 +3,7 @@
 #include "state/ready.h"
 #include "state/pre_wait.h"
 #include "state/wait.h"
+#include "state/pre_measuring.h"
 #include "state/measuring.h"
 #include "state/result.h"
 #include "state/false_start.h"
@@ -16,6 +17,7 @@ e_state (*handle_state[])(void) =
     handle_ready_state,
     handle_pre_wait_state,
     handle_wait_state,
+    handle_pre_measuring_state,
     handle_measuring_state,
     handle_result_state,
     handle_false_start_state,

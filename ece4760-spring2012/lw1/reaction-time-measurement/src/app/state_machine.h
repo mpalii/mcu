@@ -7,6 +7,7 @@ typedef enum
     READY,
     PRE_WAIT,
     WAIT,
+    PRE_MEASURING,
     MEASURING,
     RESULT,
     FALSE_START,

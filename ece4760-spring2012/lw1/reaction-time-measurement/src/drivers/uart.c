@@ -14,25 +14,12 @@
     #define BAUD_RATE_RATIO 16UL
 #endif       
 
+#include <stdlib.h>
 #include "gpio.h"
 
-/**
- * Blocking method!!!
- */
-void uart_transmit(char* array)
-{
-    uint8_t i = 0;
+void uart_transmit(char* message);
 
-    // Send characters until zero byte
-    while (array[i] != '\0')
-    {
-        // Wait for empty transmit buffer
-        loop_until_bit_is_set(UCSR0A, UDRE0);
-    
-        // Put data into buffer, sends the data
-        UDR0 = array[i++];
-    }
-}
+static char* output_buffer = NULL;
 
 /************************************************************************/
 /* Default frame format:                                                */
@@ -51,4 +38,45 @@ void init_uart(void)
     UCSR0B = _BV(TXEN0);
 
     uart_transmit("- UART ready\r\n");
+}
+
+/**
+ * @warning blocking method, use only during initialization
+ */
+void uart_transmit(char* message)
+{
+    uint8_t i = 0;
+
+    // Send characters until zero byte
+    while (message[i] != '\0')
+    {
+        // Wait for empty transmit buffer
+        loop_until_bit_is_set(UCSR0A, UDRE0);
+    
+        // Put data into buffer, sends the data
+        UDR0 = message[i++];
+    }
+}
+
+void uart_add_to_buffer(char* message)
+{
+    output_buffer = message;
+}
+
+void uart_write(void)
+{
+    if (output_buffer != NULL && bit_is_set(UCSR0A, UDRE0))
+    {
+        char data = *output_buffer;
+
+        if (data == '\0')
+        {
+            output_buffer = NULL;
+            return;
+        }
+
+        UDR0 = data;
+
+        output_buffer++;
+    }
 }

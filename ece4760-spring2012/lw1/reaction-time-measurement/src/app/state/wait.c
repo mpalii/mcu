@@ -17,7 +17,7 @@ e_state handle_wait_state(void)
     {
         led_on();
         timer2_start();
-        return MEASURING;
+        return PRE_MEASURING;
     }
 
     delay--;

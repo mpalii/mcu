@@ -15,7 +15,7 @@ e_state handle_pre_wait_state(void)
     user_reaction_time = 0;
 
     sprintf(text_buffer_serial, WAIT_SERIAL_PATTERN, (mcu_operating_time / 10), (delay / 10), (delay % 10));
-    uart_transmit(text_buffer_serial);
+    uart_add_to_buffer(text_buffer_serial);
 
     sprintf(text_buffer_lcd, WAIT_LCD_MESSAGE);
     lcd_add_to_rendering(text_buffer_lcd);

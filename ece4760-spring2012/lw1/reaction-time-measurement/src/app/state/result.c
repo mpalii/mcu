@@ -9,7 +9,7 @@
 e_state handle_result_state(void)
 {
     sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
-    uart_transmit(text_buffer_serial);
+    uart_add_to_buffer(text_buffer_serial);
 
     sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));
     lcd_add_to_rendering(text_buffer_lcd);
