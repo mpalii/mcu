@@ -1,19 +1,18 @@
-#include "app/state_machine.h"
-#include "app/metrics.h"
-#include "drivers/uart.h"
+#include <stdio.h>
 #include "drivers/lcd.h"
-#include <stdlib.h>
+#include "drivers/uart.h"
+#include "app/messages.h"
+#include "app/metrics.h"
+#include "app/state_machine.h"
 
-#define RADIX   (10)
-
-static char lcd_buffer[6] = { '\r', 0, 0, 0, 0, 0 };
-static char* result_substring = ((char*) lcd_buffer) + 1;
 
 e_state handle_result_state(void)
 {
-    uart_transmit("RESULT\r\n");
-    itoa(user_reaction_time, result_substring, RADIX);
-    lcd_add_to_rendering(lcd_buffer);
+    sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
+    uart_transmit(text_buffer_serial);
+
+    sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));
+    lcd_add_to_rendering(text_buffer_lcd);
 
     return READY;
 }

@@ -30,6 +30,7 @@ SOURCES = 							\
 	src/app/launcher.c				\
 	src/app/metrics.c				\
 	src/app/events.c				\
+	src/app/messages.c				\
 									\
 	src/app/scheduler.c				\
 	src/app/task/button_handler.c	\
