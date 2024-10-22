@@ -7,9 +7,9 @@
 #include "task/state_resolver.h"
 #include "task/serial_writer.h"
 
-#define TASK_TIME_BUTTON_HANDLING           (255)
+#define TASK_TIME_BUTTON_HANDLING           (150)
 #define TASK_TIME_LCD_RENDERING             (10)
-#define TASK_TIME_SYSTEM_STATE_RESOLVING    (1)
+#define TASK_TIME_SYSTEM_STATE_RESOLVING    (100)
 #define TASK_TIME_SERIAL_WRITING            (1)
 
 static volatile uint8_t task_time_button_handling = TASK_TIME_BUTTON_HANDLING;
@@ -45,7 +45,7 @@ void launch_scheduler(void)
 
         if (task_time_system_state_resolving == 0)
         {
-            task_time_system_state_resolving = TASK_TIME_SYSTEM_STATE_RESOLVING;
+            task_time_system_state_resolving = fast_track_mode ? 1 : TASK_TIME_SYSTEM_STATE_RESOLVING;
             resolve_state();
         }
 

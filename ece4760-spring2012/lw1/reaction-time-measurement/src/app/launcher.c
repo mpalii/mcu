@@ -7,6 +7,7 @@
 #include "drivers/lcd.h"
 #include "drivers/timer2.h"
 #include "drivers/timer0.h"
+#include "messages.h"
 #include "metrics.h"
 #include "scheduler.h"
 
@@ -31,8 +32,9 @@ static inline void init_system(void)
     init_timer2();
     init_timer0();
 
-    // Init metrics and statistics
+    // Init metrics/statistics and messages
     init_metrics();
+    init_messages();
 }
 
 static inline void start_system(void)

@@ -5,13 +5,12 @@ typedef enum
 {
     PRE_READY,
     READY,
+    BEFORE_FAST_MODE,
     PRE_WAIT,
     WAIT,
     PRE_MEASURING,
     MEASURING,
-    RESULT,
-    FALSE_START,
-    TIMEOUT
+    AFTER_FAST_MODE
 } e_state;
 
 void handle_device_state(void);

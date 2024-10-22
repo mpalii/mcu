@@ -6,7 +6,7 @@ e_state handle_ready_state(void)
     if (button_event)
     {
         button_event = false;
-        return PRE_WAIT;
+        return BEFORE_FAST_MODE;
     }
 
     return READY;

@@ -1,4 +1,6 @@
-#include <app/state_machine.h>
+#include <stdio.h>
+#include "app/state_machine.h"
+#include "app/messages.h"
 #include <app/metrics.h>
 #include <app/events.h>
 #include "drivers/led.h"
@@ -9,10 +11,15 @@ e_state handle_measuring_state(void)
     if (button_event)
     {
         button_event = false;
-        fast_track_mode = false;        
+        fast_track_mode = false;      
+
         led_off();
         timer2_stop();
-        return RESULT;
+
+        sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
+        sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));
+
+        return AFTER_FAST_MODE;
     }
 
     if (user_reaction_time == 10000)
@@ -20,7 +27,11 @@ e_state handle_measuring_state(void)
         fast_track_mode = false;
         led_off();
         timer2_stop();
-        return TIMEOUT;
+
+        sprintf(text_buffer_serial, TIMEOUT_SERIAL_PATTERN, (mcu_operating_time / 10));
+        sprintf(text_buffer_lcd, TIMEOUT_LCD_MESSAGE);
+
+        return PRE_READY; // NO NEED for stabilization
     }
 
     user_reaction_time++;
