@@ -11,7 +11,7 @@
 /* Set up timer 0 for 1 ms timebase                                         */
 /* (8 (prescaler) * 250 (OCR0A + 1)) / 20_000_000 MHz = 0.0001s = 0.1ms     */
 /****************************************************************************/
-void init_timer0(void)
+void init_system_timer(void)
 {
     // TCCR0A - Timer/Counter0 Control Register channel A
     TCCR0A = _BV(WGM01);    // Clear Timer on Compare Match (CTC) mode (only works with channel)
@@ -25,7 +25,7 @@ void init_timer0(void)
     uart_transmit("- TIMER 0 ready\r\n");
 }
 
-void timer0_start(void)
+void system_timer_start(void)
 {
     // TCCR0B - Timer/Counter0 Control Register channel B
     TCCR0B = _BV(CS01); // clk/8 (From prescaler)

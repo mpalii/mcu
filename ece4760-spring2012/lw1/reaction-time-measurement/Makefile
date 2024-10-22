@@ -24,8 +24,8 @@ SOURCES = 								\
 	src/drivers/button.c				\
 	src/drivers/reset.c					\
 	src/drivers/lcd.c					\
-	src/drivers/timer0.c				\
-	src/drivers/timer2.c				\
+	src/drivers/system_timer.c			\
+	src/drivers/buzzer.c				\
 										\
 	src/app/launcher.c					\
 	src/app/metrics.c					\

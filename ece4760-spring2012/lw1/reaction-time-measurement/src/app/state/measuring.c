@@ -4,7 +4,7 @@
 #include <app/metrics.h>
 #include <app/events.h>
 #include "drivers/led.h"
-#include "drivers/timer2.h"
+#include "drivers/buzzer.h"
 
 e_state handle_measuring_state(void)
 {
@@ -14,7 +14,7 @@ e_state handle_measuring_state(void)
         fast_track_mode = false;      
 
         led_off();
-        timer2_stop();
+        buzzer_off();
 
         sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
         sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));
@@ -26,7 +26,7 @@ e_state handle_measuring_state(void)
     {
         fast_track_mode = false;
         led_off();
-        timer2_stop();
+        buzzer_off();
 
         sprintf(text_buffer_serial, TIMEOUT_SERIAL_PATTERN, (mcu_operating_time / 10));
         sprintf(text_buffer_lcd, TIMEOUT_LCD_MESSAGE);

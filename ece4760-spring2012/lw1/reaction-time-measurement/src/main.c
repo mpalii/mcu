@@ -2,7 +2,7 @@
  * @author Maksym Palii
  * @brief Reaction time measurement
  * @version 1.0
- * @date 2024 October 15
+ * @date 2024 October 23
  * @link https://people.ece.cornell.edu/land/courses/ece4760/labs/s2012/lab1.html
  */
 
@@ -11,7 +11,7 @@
 int main(void)
 {
 
-    launch_app();
+    launch_system();
 
     return 0;
 }

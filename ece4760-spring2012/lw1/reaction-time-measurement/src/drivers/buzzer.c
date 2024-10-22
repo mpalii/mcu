@@ -11,7 +11,7 @@
 /* the passive buzzer will generate sound with ~880Hz pitch                 */
 /* (256 (prescaler) * 82(OCR2A + 1)) / 18_432_000 Hz = 0.001139s            */
 /****************************************************************************/
-void init_timer2(void)
+void init_buzzer(void)
 {
     // TCCR2A - Timer/Counter2 Control Register channel A
     TCCR2A |= _BV(WGM21); // Waveform Generation Mode - CTC
@@ -28,13 +28,13 @@ void init_timer2(void)
     uart_transmit("- TIMER 2 ready\r\n");
 }
 
-void timer2_start(void)
+void buzzer_on(void)
 {
     // TCCR2A - Timer/Counter2 Control Register channel A
     TCCR2A |= _BV(COM2A0);  // Enable OC2A toggling on compare match
 }
 
-void timer2_stop(void)
+void buzzer_off(void)
 {
     // TCCR2A - Timer/Counter2 Control Register channel A
     TCCR2A &= ~_BV(COM2A0); // Normal port operation, OC2A disconnected

@@ -5,7 +5,7 @@
 #include "app/events.h"
 #include "drivers/lcd.h"
 #include "drivers/led.h"
-#include "drivers/timer2.h"
+#include "drivers/buzzer.h"
 
 e_state handle_wait_state(void)
 {
@@ -23,7 +23,7 @@ e_state handle_wait_state(void)
     if (delay == 0)
     {
         led_on();
-        timer2_start();
+        buzzer_on();
         return PRE_MEASURING;
     }
 
