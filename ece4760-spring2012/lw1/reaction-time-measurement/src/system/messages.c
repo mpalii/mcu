@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "app/messages.h"
-#include "app/metrics.h"
+#include "system/messages.h"
+#include "system/metrics.h"
 
 char text_buffer_lcd[33] = { 0 };
 char text_buffer_serial[40] = { 0 };

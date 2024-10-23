@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include "app/state_machine.h"
-#include "app/messages.h"
-#include <app/metrics.h>
-#include <app/events.h>
-#include "drivers/led.h"
 #include "drivers/buzzer.h"
 #include "drivers/eeprom.h"
+#include "drivers/led.h"
+#include "system/events.h"
+#include "system/messages.h"
+#include "system/metrics.h"
+#include "system/state_machine.h"
 
 e_state handle_measuring_state(void)
 {

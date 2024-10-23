@@ -1,7 +1,7 @@
 #include "drivers/lcd.h"
 #include "drivers/uart.h"
-#include "app/messages.h"
-#include "app/state_machine.h"
+#include "system/messages.h"
+#include "system/state_machine.h"
 
 e_state handle_pre_ready_state(void)
 {

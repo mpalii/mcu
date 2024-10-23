@@ -1,6 +1,6 @@
-#include "drivers/button.h"
-#include "app/events.h"
 #include <stdbool.h>
+#include "drivers/button.h"
+#include "system/events.h"
 
 static enum button_state previous_state = RELEASED;
 

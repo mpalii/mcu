@@ -1,11 +1,11 @@
-#include "state_machine.h"
-#include "state/pre_ready.h"
-#include "state/ready.h"
-#include "state/before_fast_mode.h"
-#include "state/pre_wait.h"
-#include "state/wait.h"
-#include "state/measuring.h"
-#include "state/after_fast_mode.h"
+#include "system/state_machine.h"
+#include "system/state/pre_ready.h"
+#include "system/state/ready.h"
+#include "system/state/before_fast_mode.h"
+#include "system/state/pre_wait.h"
+#include "system/state/wait.h"
+#include "system/state/measuring.h"
+#include "system/state/after_fast_mode.h"
 
 static e_state next_state = PRE_READY;
 

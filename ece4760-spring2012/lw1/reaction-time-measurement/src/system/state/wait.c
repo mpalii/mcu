@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include "app/state_machine.h"
-#include "app/messages.h"
-#include "app/metrics.h"
-#include "app/events.h"
+#include "drivers/buzzer.h"
 #include "drivers/lcd.h"
 #include "drivers/led.h"
-#include "drivers/buzzer.h"
+#include "system/events.h"
+#include "system/messages.h"
+#include "system/metrics.h"
+#include "system/state_machine.h"
 
 e_state handle_wait_state(void)
 {

@@ -28,26 +28,26 @@ SOURCES = 								\
 	src/drivers/buzzer.c				\
 	src/drivers/eeprom.c				\
 										\
-	src/app/launcher.c					\
-	src/app/metrics.c					\
-	src/app/events.c					\
-	src/app/messages.c					\
+	src/system/launcher.c				\
+	src/system/metrics.c				\
+	src/system/events.c					\
+	src/system/messages.c				\
 										\
-	src/app/scheduler.c					\
-	src/app/task/button_handler.c		\
-	src/app/task/lcd_renderer.c			\
-	src/app/task/state_resolver.c		\
-	src/app/task/serial_writer.c		\
-	src/app/task/eeprom_writer.c		\
+	src/system/scheduler.c				\
+	src/system/task/button_handler.c	\
+	src/system/task/lcd_renderer.c		\
+	src/system/task/state_resolver.c	\
+	src/system/task/serial_writer.c		\
+	src/system/task/eeprom_writer.c		\
 										\
-	src/app/state_machine.c				\
-	src/app/state/pre_ready.c			\
-	src/app/state/before_fast_mode.c	\
-	src/app/state/ready.c				\
-	src/app/state/pre_wait.c			\
-	src/app/state/wait.c				\
-	src/app/state/measuring.c			\
-	src/app/state/after_fast_mode.c		\
+	src/system/state_machine.c			\
+	src/system/state/pre_ready.c		\
+	src/system/state/before_fast_mode.c	\
+	src/system/state/ready.c			\
+	src/system/state/pre_wait.c			\
+	src/system/state/wait.c				\
+	src/system/state/measuring.c		\
+	src/system/state/after_fast_mode.c	\
 
 # Object files
 OBJECTS = $(patsubst src/%.c, target/%.o, $(SOURCES))

@@ -6,7 +6,7 @@
  * @link https://people.ece.cornell.edu/land/courses/ece4760/labs/s2012/lab1.html
  */
 
-#include "app/launcher.h"
+#include "system/launcher.h"
 
 int main(void)
 {

@@ -1,12 +1,12 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
-#include "metrics.h"
-#include "events.h"
-#include "task/button_handler.h"
-#include "task/lcd_renderer.h"
-#include "task/state_resolver.h"
-#include "task/serial_writer.h"
-#include "task/eeprom_writer.h"
+#include "system/events.h"
+#include "system/metrics.h"
+#include "system/task/button_handler.h"
+#include "system/task/lcd_renderer.h"
+#include "system/task/state_resolver.h"
+#include "system/task/serial_writer.h"
+#include "system/task/eeprom_writer.h"
 
 #define TASK_TIME_BUTTON_HANDLING           (150)
 #define TASK_TIME_LCD_RENDERING             (10)

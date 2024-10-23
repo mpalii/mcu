@@ -7,9 +7,9 @@
 #include "drivers/lcd.h"
 #include "drivers/system_timer.h"
 #include "drivers/buzzer.h"
-#include "messages.h"
-#include "metrics.h"
-#include "scheduler.h"
+#include "system/messages.h"
+#include "system/metrics.h"
+#include "system/scheduler.h"
 
 static inline void init_system(void);
 static inline void start_system(void);

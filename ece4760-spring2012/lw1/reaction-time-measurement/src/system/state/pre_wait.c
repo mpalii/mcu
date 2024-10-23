@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "drivers/lcd.h"
 #include "drivers/uart.h"
-#include "app/events.h"
-#include "app/messages.h"
-#include "app/metrics.h"
-#include "app/state_machine.h"
+#include "system/events.h"
+#include "system/messages.h"
+#include "system/metrics.h"
+#include "system/state_machine.h"
 
 e_state handle_pre_wait_state(void)
 {

@@ -1,5 +1,5 @@
-#include "app/state_machine.h"
-#include "app/events.h"
+#include "system/events.h"
+#include "system/state_machine.h"
 
 e_state handle_ready_state(void)
 {
