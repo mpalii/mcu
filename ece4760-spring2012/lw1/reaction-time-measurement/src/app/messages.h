@@ -5,7 +5,7 @@
 #define READY_LCD_PATTERN           "\b\r  Best result:\n%3u.%ums"
 
 #define WAIT_SERIAL_PATTERN         "%010lums-WAIT: %u.%ums\r\n"
-#define WAIT_LCD_MESSAGE            "\b\r    Wait for\n   signal..."
+#define WAIT_LCD_MESSAGE            "\b\r    Wait for\n  the signal..."
 
 #define TIMEOUT_SERIAL_PATTERN      "%010lums-TIMEOUT\r\n"
 #define TIMEOUT_LCD_MESSAGE         "\b\r    Timeout!\n   Try again!"

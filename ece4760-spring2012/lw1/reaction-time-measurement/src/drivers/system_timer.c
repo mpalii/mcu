@@ -22,7 +22,7 @@ void init_system_timer(void)
     // TIMSK0 - Timer/Counter0 Interrupt Mask Register
     TIMSK0 = _BV(OCIE0A);   // Timer/Counter0 Output Compare Match channel A Interrupt Enable
 
-    uart_transmit("- TIMER 0 ready\r\n");
+    uart_transmit("- SYSTEM TIMER ready\r\n");
 }
 
 void system_timer_start(void)

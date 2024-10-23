@@ -25,7 +25,7 @@ void init_buzzer(void)
     // Configure GPIO
     _gpio_set_output(BUZZER);
 
-    uart_transmit("- TIMER 2 ready\r\n");
+    uart_transmit("- BUZZER ready\r\n");
 }
 
 void buzzer_on(void)
