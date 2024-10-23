@@ -16,8 +16,6 @@
 #define RESULT_SERIAL_PATTERN       "%010lums-RESULT %u.%ums\r\n"
 #define RESULT_LCD_PATTERN          "\b\r  Your result:\n%3u.%ums"
 
-#define MEASURING_SERIAL_PATTERN    "%010lums-MEASURING\r\n"
-
 extern char text_buffer_lcd[33];
 extern char text_buffer_serial[40];
 

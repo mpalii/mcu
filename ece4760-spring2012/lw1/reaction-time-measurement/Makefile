@@ -46,7 +46,6 @@ SOURCES = 								\
 	src/app/state/ready.c				\
 	src/app/state/pre_wait.c			\
 	src/app/state/wait.c				\
-	src/app/state/pre_measuring.c		\
 	src/app/state/measuring.c			\
 	src/app/state/after_fast_mode.c		\
 

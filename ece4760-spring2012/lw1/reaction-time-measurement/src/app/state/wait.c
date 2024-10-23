@@ -24,7 +24,7 @@ e_state handle_wait_state(void)
     {
         led_on();
         buzzer_on();
-        return PRE_MEASURING;
+        return MEASURING;
     }
 
     delay--;

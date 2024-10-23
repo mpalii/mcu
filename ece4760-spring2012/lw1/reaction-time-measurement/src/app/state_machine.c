@@ -4,7 +4,6 @@
 #include "state/before_fast_mode.h"
 #include "state/pre_wait.h"
 #include "state/wait.h"
-#include "state/pre_measuring.h"
 #include "state/measuring.h"
 #include "state/after_fast_mode.h"
 
@@ -17,7 +16,6 @@ e_state (*handle_state[])(void) =
     handle_before_fast_mode_state,
     handle_pre_wait_state,
     handle_wait_state,
-    handle_pre_measuring_state,
     handle_measuring_state,
     handle_after_fast_mode_state
 };

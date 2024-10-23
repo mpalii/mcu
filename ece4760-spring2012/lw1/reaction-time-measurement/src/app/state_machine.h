@@ -8,7 +8,6 @@ typedef enum
     BEFORE_FAST_MODE,
     PRE_WAIT,
     WAIT,
-    PRE_MEASURING,
     MEASURING,
     AFTER_FAST_MODE
 } e_state;
