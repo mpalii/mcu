@@ -5,6 +5,7 @@
 #include <app/events.h>
 #include "drivers/led.h"
 #include "drivers/buzzer.h"
+#include "drivers/eeprom.h"
 
 e_state handle_measuring_state(void)
 {
@@ -15,6 +16,12 @@ e_state handle_measuring_state(void)
 
         led_off();
         buzzer_off();
+
+        if (user_reaction_time < high_score)
+        {
+            high_score = user_reaction_time;
+            eeprom_save_score(high_score);
+        }
 
         sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
         sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));

@@ -6,16 +6,19 @@
 #include "task/lcd_renderer.h"
 #include "task/state_resolver.h"
 #include "task/serial_writer.h"
+#include "task/eeprom_writer.h"
 
 #define TASK_TIME_BUTTON_HANDLING           (150)
 #define TASK_TIME_LCD_RENDERING             (10)
 #define TASK_TIME_SYSTEM_STATE_RESOLVING    (100)
 #define TASK_TIME_SERIAL_WRITING            (1)
+#define TASK_TIME_EEPROM_WRITING            (1)
 
 static volatile uint8_t task_time_button_handling = TASK_TIME_BUTTON_HANDLING;
 static volatile uint8_t task_time_lcd_rendering = TASK_TIME_LCD_RENDERING;
 static volatile uint8_t task_time_system_state_resolving = TASK_TIME_SYSTEM_STATE_RESOLVING;
 static volatile uint8_t task_time_serial_writing = TASK_TIME_SERIAL_WRITING;
+static volatile uint8_t task_time_eeprom_writing = TASK_TIME_EEPROM_WRITING;
 
 ISR (TIMER0_COMPA_vect)
 {
@@ -24,6 +27,7 @@ ISR (TIMER0_COMPA_vect)
     if (task_time_lcd_rendering             > 0)    --task_time_lcd_rendering;
     if (task_time_system_state_resolving    > 0)    --task_time_system_state_resolving;
     if (task_time_serial_writing            > 0)    --task_time_serial_writing;
+    if (task_time_eeprom_writing            > 0)    --task_time_eeprom_writing;
 }
 
 void launch_scheduler(void)
@@ -53,6 +57,12 @@ void launch_scheduler(void)
         {
             task_time_serial_writing = TASK_TIME_SERIAL_WRITING;
             serial_write();
+        }
+
+        if (task_time_eeprom_writing == 0)
+        {
+            task_time_eeprom_writing = TASK_TIME_EEPROM_WRITING;
+            eeprom_write();
         }
     }   
 }

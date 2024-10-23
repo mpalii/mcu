@@ -26,6 +26,7 @@ SOURCES = 								\
 	src/drivers/lcd.c					\
 	src/drivers/system_timer.c			\
 	src/drivers/buzzer.c				\
+	src/drivers/eeprom.c				\
 										\
 	src/app/launcher.c					\
 	src/app/metrics.c					\
@@ -37,6 +38,7 @@ SOURCES = 								\
 	src/app/task/lcd_renderer.c			\
 	src/app/task/state_resolver.c		\
 	src/app/task/serial_writer.c		\
+	src/app/task/eeprom_writer.c		\
 										\
 	src/app/state_machine.c				\
 	src/app/state/pre_ready.c			\
