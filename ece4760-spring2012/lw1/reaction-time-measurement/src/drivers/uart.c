@@ -12,13 +12,22 @@
     #define BAUD_RATE_RATIO 8UL
 #else 
     #define BAUD_RATE_RATIO 16UL
-#endif       
+#endif
 
+#define BUFFER_SIZE     (9)
+
+#include <stdbool.h>
 #include <stdlib.h>
 #include "gpio.h"
 
 void uart_transmit(char* message);
 
+// RX
+char input_buffer[BUFFER_SIZE] = {'\0'};
+unsigned char index_input = 0;
+bool rx_in_progress = true;
+
+// TX
 static char* output_buffer = NULL;
 
 /************************************************************************/
@@ -34,8 +43,8 @@ void init_uart(void)
         UCSR0A |= _BV(U2X0);
     #endif
  
-    // Enable transmission only
-    UCSR0B = _BV(TXEN0);
+    // Enable receiving and transmission
+    UCSR0B = _BV(RXEN0) | _BV(TXEN0);
 
     uart_transmit("- UART ready\r\n");
 }
@@ -80,3 +89,55 @@ void uart_write(void)
         output_buffer++;
     }
 }
+
+char uart_read(void)
+{
+    return bit_is_set(UCSR0A, RXC0) ? UDR0 : 0;
+}
+
+void uart_enable_rx(void)
+{
+    UCSR0B |= _BV(RXEN0);
+}
+
+void uart_disable_rx(void)
+{
+    UCSR0B &= ~_BV(RXEN0);
+}
+
+// char* uart_receive_data(void)
+// {
+//     if (!rx_in_progress)
+//     {
+//         return input_buffer;
+//     }
+    
+//     if (bit_is_set(UCSR0A, RXC0))
+//     {
+//         int8_t data = UDR0;
+        
+//         if (index_input >= BUFFER_SIZE)
+//         {
+//             index_input = 0;
+//         }
+        
+//         if (data == '\r' || data == '\n')
+//         {
+//             input_buffer[index_input] = '\0';
+//             rx_in_progress = false;
+//             index_input = 0;
+//         }
+//         else
+//         {
+//             input_buffer[index_input] = data;
+//             index_input++;
+//         }
+//     }
+
+//     return NULL;
+// }
+
+// void uart_set_ready_for_recieve(void)
+// {
+//     rx_in_progress = true;
+// }

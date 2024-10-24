@@ -16,6 +16,12 @@
 #define RESULT_SERIAL_PATTERN       "%010lums-RESULT %u.%ums\r\n"
 #define RESULT_LCD_PATTERN          "\b\r  Your result:\n%3u.%ums"
 
+#define LED_ENABLED                 "%010lums-LED ENABLED\r\n"
+#define LED_DISABLED                "%010lums-LED DISABLED\r\n"
+#define BUZZER_ENABLED              "%010lums-BUZZER ENABLED\r\n"
+#define BUZZER_DISABLED             "%010lums-BUZZER DISABLED\r\n"
+#define UNKNOWN                     "%010lums-UNKNOWN\r\n"
+
 extern char text_buffer_lcd[33];
 extern char text_buffer_serial[40];
 

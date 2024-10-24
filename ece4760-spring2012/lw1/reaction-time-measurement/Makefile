@@ -39,6 +39,7 @@ SOURCES = 								\
 	src/system/task/state_resolver.c	\
 	src/system/task/serial_writer.c		\
 	src/system/task/eeprom_writer.c		\
+	src/system/task/serial_reader.c		\
 										\
 	src/system/state_machine.c			\
 	src/system/state/pre_ready.c		\

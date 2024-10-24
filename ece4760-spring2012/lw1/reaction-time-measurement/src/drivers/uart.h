@@ -6,4 +6,10 @@ void uart_transmit(char* message);
 void uart_add_to_buffer(char* message);
 void uart_write(void);
 
+// char* uart_receive_data(void);
+// void uart_set_ready_for_recieve(void);
+char uart_read(void);
+void uart_enable_rx(void);
+void uart_disable_rx(void);
+
 #endif /* UART_H_ */

@@ -13,5 +13,6 @@ typedef enum
 } e_state;
 
 void handle_device_state(void);
+e_state get_device_state(void);
 
 #endif /* STATE_MACHINE_H_ */

@@ -7,7 +7,7 @@
 #include "system/state/measuring.h"
 #include "system/state/after_fast_mode.h"
 
-static e_state next_state = PRE_READY;
+static e_state state = PRE_READY;
 
 e_state (*handle_state[])(void) = 
 {
@@ -22,5 +22,10 @@ e_state (*handle_state[])(void) =
 
 void handle_device_state(void)
 {
-    next_state = handle_state[next_state]();
+    state = handle_state[state]();
+}
+
+e_state get_device_state(void)
+{
+    return state;
 }

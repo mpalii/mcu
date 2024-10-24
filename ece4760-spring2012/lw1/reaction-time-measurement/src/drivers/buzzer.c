@@ -1,5 +1,8 @@
+#include <stdbool.h>
 #include "gpio.h"
 #include "uart.h"
+
+static bool is_enabled = true;
 
 /**
  * @brief Timer 2 is used for sound generation with ~880Hz pitch
@@ -30,8 +33,11 @@ void init_buzzer(void)
 
 void buzzer_on(void)
 {
-    // TCCR2A - Timer/Counter2 Control Register channel A
-    TCCR2A |= _BV(COM2A0);  // Enable OC2A toggling on compare match
+    if (is_enabled)
+    {
+        // TCCR2A - Timer/Counter2 Control Register channel A
+        TCCR2A |= _BV(COM2A0);  // Enable OC2A toggling on compare match
+    }
 }
 
 void buzzer_off(void)
@@ -41,4 +47,10 @@ void buzzer_off(void)
 	
     // System can stop Timer/Counter2 when pin will be driven high
     _gpio_low(BUZZER);
+}
+
+bool buzzer_toggle_enable_flag(void)
+{
+    is_enabled = is_enabled ? false : true;
+    return is_enabled;
 }
