@@ -15,40 +15,40 @@ AVROBJDUMP  = avr-objdump --disassemble
 AVRSIZE     = avr-size --format=AVR --mcu=$(DEVICE)
 
 # Source files
-SOURCES = 								\
-    src/main.c 							\
-										\
-	src/drivers/gpio.c					\
-	src/drivers/uart.c					\
-	src/drivers/led.c					\
-	src/drivers/button.c				\
-	src/drivers/reset.c					\
-	src/drivers/lcd.c					\
-	src/drivers/system_timer.c			\
-	src/drivers/buzzer.c				\
-	src/drivers/eeprom.c				\
-										\
-	src/system/launcher.c				\
-	src/system/metrics.c				\
-	src/system/events.c					\
-	src/system/messages.c				\
-										\
-	src/system/scheduler.c				\
-	src/system/task/button_handler.c	\
-	src/system/task/lcd_renderer.c		\
-	src/system/task/state_resolver.c	\
-	src/system/task/serial_writer.c		\
-	src/system/task/eeprom_writer.c		\
-	src/system/task/serial_reader.c		\
-										\
-	src/system/state_machine.c			\
-	src/system/state/pre_ready.c		\
-	src/system/state/before_fast_mode.c	\
-	src/system/state/ready.c			\
-	src/system/state/pre_wait.c			\
-	src/system/state/wait.c				\
-	src/system/state/measuring.c		\
-	src/system/state/after_fast_mode.c	\
+SOURCES = 									\
+    src/main.c 								\
+											\
+	src/drivers/gpio.c						\
+	src/drivers/uart.c						\
+	src/drivers/led.c						\
+	src/drivers/button.c					\
+	src/drivers/reset.c						\
+	src/drivers/lcd.c						\
+	src/drivers/system_timer.c				\
+	src/drivers/buzzer.c					\
+	src/drivers/eeprom.c					\
+											\
+	src/system/launcher.c					\
+	src/system/metrics.c					\
+	src/system/events.c						\
+	src/system/messages.c					\
+											\
+	src/system/scheduler.c					\
+	src/system/task/button_handler.c		\
+	src/system/task/lcd_renderer.c			\
+	src/system/task/state_resolver.c		\
+	src/system/task/serial_writer.c			\
+	src/system/task/eeprom_writer.c			\
+	src/system/task/serial_input_handler.c	\
+											\
+	src/system/state_machine.c				\
+	src/system/state/pre_ready.c			\
+	src/system/state/before_fast_mode.c		\
+	src/system/state/ready.c				\
+	src/system/state/pre_wait.c				\
+	src/system/state/wait.c					\
+	src/system/state/measuring.c			\
+	src/system/state/after_fast_mode.c		\
 
 # Object files
 OBJECTS = $(patsubst src/%.c, target/%.o, $(SOURCES))

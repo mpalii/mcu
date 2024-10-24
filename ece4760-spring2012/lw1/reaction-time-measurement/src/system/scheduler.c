@@ -8,7 +8,7 @@
 #include "system/task/state_resolver.h"
 #include "system/task/serial_writer.h"
 #include "system/task/eeprom_writer.h"
-#include "system/task/serial_reader.h"
+#include "system/task/serial_input_handler.h"
 
 #define TASK_TIME_BUTTON_HANDLING           (150)
 #define TASK_TIME_LCD_RENDERING             (10)
@@ -50,7 +50,7 @@ void launch_scheduler(void)
         if (task_time_serial_reading == 0)
         {
             task_time_serial_reading = TASK_TIME_SERIAL_READING;
-            if (get_device_state() == READY) serial_read();
+            if (get_device_state() == READY) handle_serial_input();
         }
 
         if (task_time_button_handling == 0)         

@@ -8,7 +8,7 @@
 
 static char* response_pattern = NULL;
 
-void serial_read(void)
+void handle_serial_input(void)
 {
     char input = uart_read();
 
