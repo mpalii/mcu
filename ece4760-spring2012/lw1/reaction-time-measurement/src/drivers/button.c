@@ -1,7 +1,7 @@
-#include "button.h"
-#include "uart.h"
-#include "gpio.h"
 #include <stdbool.h>
+#include "button.h"
+#include "gpio.h"
+#include "uart.h"
 
 static enum button_state state = RELEASED;
 
@@ -22,15 +22,15 @@ enum button_state button_state_get(void)
         case RELEASED:
             state = push_probe ? PRE_PUSHED : RELEASED;
             break;
-        
+
         case PRE_PUSHED:
             state = push_probe ? PUSHED : RELEASED;
             break;
-        
+
         case PUSHED:
             state = push_probe ? PUSHED : PRE_RELEASED;
             break;
-        
+
         case PRE_RELEASED:
             state = push_probe ? PUSHED : RELEASED;
             break;

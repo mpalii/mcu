@@ -6,7 +6,6 @@
 
 e_state handle_pre_wait_state(void)
 {
-
     text_buffer_serial = get_serial_wait_message();
     text_buffer_lcd = lcd_pattern_wait;
 

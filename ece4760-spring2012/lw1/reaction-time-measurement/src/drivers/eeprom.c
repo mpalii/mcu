@@ -11,7 +11,7 @@ void eeprom_write_score(void)
     if (busy && eeprom_is_ready())
     {
         uint8_t *first_byte_address = (uint8_t *) &score_to_save;
-		
+
         if (data_index == 0)
         {
             eeprom_update_byte((uint8_t*) SCORE_EEPROM_ADDRESS, *first_byte_address);

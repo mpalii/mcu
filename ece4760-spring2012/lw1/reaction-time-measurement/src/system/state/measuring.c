@@ -1,4 +1,3 @@
-// #include <stdio.h>
 #include "drivers/buzzer.h"
 #include "drivers/eeprom.h"
 #include "drivers/led.h"

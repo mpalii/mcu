@@ -1,8 +1,8 @@
 #include <stdint.h>
+#include <stdlib.h>
 #include "system/events.h"
 #include "system/state_machine.h"
 #include "system/metrics.h"
-#include <stdlib.h>
 
 #define REPEAT_NUMBER   (20)
 

@@ -1,6 +1,6 @@
+#include <stdbool.h>
 #include "gpio.h"
 #include "uart.h"
-#include <stdbool.h>
 
 void init_reset(void)
 {

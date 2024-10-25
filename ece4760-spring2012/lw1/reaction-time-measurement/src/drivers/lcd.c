@@ -1,8 +1,8 @@
-#include "gpio.h"
-#include "uart.h"
 #include <stdbool.h>
 #include <stddef.h>
 #include <util/delay.h>
+#include "gpio.h"
+#include "uart.h"
 
 #define MOVE_CURSOR_TO_POSITION_0_LINE_1 0x80
 #define MOVE_CURSOR_TO_POSITION_0_LINE_2 0xC0
