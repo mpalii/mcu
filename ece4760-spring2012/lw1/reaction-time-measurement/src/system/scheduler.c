@@ -1,5 +1,6 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
+#include "drivers/gpio.h"
 #include "system/events.h"
 #include "system/metrics.h"
 #include "system/state_machine.h"
@@ -28,11 +29,17 @@ ISR (TIMER0_COMPA_vect)
 {
     mcu_operating_time++;
     if (task_time_button_handling           > 0)    --task_time_button_handling;
+    else _gpio_high(DEADLINE_IND);
     if (task_time_lcd_rendering             > 0)    --task_time_lcd_rendering;
+    else _gpio_high(DEADLINE_IND);
     if (task_time_system_state_resolving    > 0)    --task_time_system_state_resolving;
+    else _gpio_high(DEADLINE_IND);
     if (task_time_serial_writing            > 0)    --task_time_serial_writing;
+    else _gpio_high(DEADLINE_IND);
     if (task_time_eeprom_writing            > 0)    --task_time_eeprom_writing;
+    else _gpio_high(DEADLINE_IND);
     if (task_time_serial_reading            > 0)    --task_time_serial_reading;
+    else _gpio_high(DEADLINE_IND);
 }
 
 void launch_scheduler(void)

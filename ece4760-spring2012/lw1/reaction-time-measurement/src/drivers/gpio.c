@@ -5,6 +5,7 @@
  */
 
 #include "gpio.h"
+#include <util/delay.h>
 
 void init_gpio(void)
 {
@@ -14,4 +15,9 @@ void init_gpio(void)
      */
     MCUCR |= _BV(JTD);
     MCUCR |= _BV(JTD);
+
+    _gpio_set_output(DEADLINE_IND);
+    _gpio_high(DEADLINE_IND);
+    _delay_ms(1000);
+    _gpio_low(DEADLINE_IND);
 }

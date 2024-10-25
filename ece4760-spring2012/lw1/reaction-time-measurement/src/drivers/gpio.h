@@ -60,7 +60,7 @@ void init_gpio(void);
 #define _GPIO_UNUSED_05         _PA4
 #define _GPIO_UNUSED_06         _PA5
 #define _GPIO_UNUSED_07         _PA6
-#define _GPIO_UNUSED_08         _PA7
+#define DEADLINE_IND            _PA7
 
 #define _GPIO_UNUSED_09         _PB0
 #define _GPIO_UNUSED_10         _PB1
