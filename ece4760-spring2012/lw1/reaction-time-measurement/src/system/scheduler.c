@@ -47,19 +47,6 @@ void launch_scheduler(void)
     // MAIN super-loop
     while (true)
     {
-
-        if (task_time_system_state_resolving == 0)
-        {
-            task_time_system_state_resolving = fast_track_mode ? 1 : TASK_TIME_SYSTEM_STATE_RESOLVING;
-            resolve_state();
-        }
-
-        if (task_time_serial_reading == 0)
-        {
-            task_time_serial_reading = TASK_TIME_SERIAL_READING;
-            if (get_device_state() == READY) handle_serial_input();
-        }
-
         if (task_time_button_handling == 0)         
         {
             task_time_button_handling = fast_track_mode ? 1 : TASK_TIME_BUTTON_HANDLING;
@@ -72,6 +59,12 @@ void launch_scheduler(void)
             render_lcd();
         }
 
+        if (task_time_system_state_resolving == 0)
+        {
+            task_time_system_state_resolving = fast_track_mode ? 1 : TASK_TIME_SYSTEM_STATE_RESOLVING;
+            resolve_state();
+        }
+
         if (task_time_serial_writing == 0)
         {
             task_time_serial_writing = TASK_TIME_SERIAL_WRITING;
@@ -82,6 +75,12 @@ void launch_scheduler(void)
         {
             task_time_eeprom_writing = TASK_TIME_EEPROM_WRITING;
             eeprom_write();
+        }
+
+        if (task_time_serial_reading == 0)
+        {
+            task_time_serial_reading = TASK_TIME_SERIAL_READING;
+            if (get_device_state() == READY) handle_serial_input();
         }
     }   
 }

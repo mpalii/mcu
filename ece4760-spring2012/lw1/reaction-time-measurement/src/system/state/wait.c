@@ -1,4 +1,4 @@
-#include <stdio.h>
+// #include <stdio.h>
 #include "drivers/buzzer.h"
 #include "drivers/lcd.h"
 #include "drivers/led.h"
@@ -14,8 +14,8 @@ e_state handle_wait_state(void)
         button_event = false;
         fast_track_mode = false;
 
-        sprintf(text_buffer_serial, FALSE_START_SERIAL_PATTERN, (mcu_operating_time / 10));
-        sprintf(text_buffer_lcd, FALSE_START_LCD_MESSAGE);
+        text_buffer_serial = serial_pattern_false_start;
+        text_buffer_lcd = lcd_pattern_false_start;
 
         return AFTER_FAST_MODE;     // stabilization needs
     }

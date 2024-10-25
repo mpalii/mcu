@@ -1,4 +1,4 @@
-#include <stdio.h>
+// #include <stdio.h>
 #include "drivers/buzzer.h"
 #include "drivers/eeprom.h"
 #include "drivers/led.h"
@@ -17,13 +17,13 @@ e_state handle_measuring_state(void)
         led_off();
         buzzer_off();
 
-        if (user_reaction_time > 0)
-        {
-            // this is an attempt to reduce the error of measurement
-            // in fact thid delay can take up to 0.2ms
-            // but reduce the user reaction time per 0.1ms will be enough
-            user_reaction_time--;
-        }
+        // if (user_reaction_time > 0)
+        // {
+        //     // this is an attempt to reduce the error of measurement
+        //     // in fact thid delay can take up to 0.2ms
+        //     // but reduce the user reaction time per 0.1ms will be enough
+        //     user_reaction_time--;
+        // }
 
         if (user_reaction_time < high_score)
         {
@@ -31,8 +31,8 @@ e_state handle_measuring_state(void)
             eeprom_save_score(high_score);
         }
 
-        sprintf(text_buffer_serial, RESULT_SERIAL_PATTERN, (mcu_operating_time / 10), (user_reaction_time / 10), (user_reaction_time % 10));
-        sprintf(text_buffer_lcd, RESULT_LCD_PATTERN, (user_reaction_time / 10), (user_reaction_time % 10));
+        text_buffer_serial = serial_pattern_result;
+        text_buffer_lcd = get_lcd_result_message();
 
         return AFTER_FAST_MODE;
     }
@@ -43,8 +43,8 @@ e_state handle_measuring_state(void)
         led_off();
         buzzer_off();
 
-        sprintf(text_buffer_serial, TIMEOUT_SERIAL_PATTERN, (mcu_operating_time / 10));
-        sprintf(text_buffer_lcd, TIMEOUT_LCD_MESSAGE);
+        text_buffer_serial = serial_pattern_timeout;
+        text_buffer_lcd = lcd_pattern_timeout;
 
         return PRE_READY; // NO NEED for stabilization
     }

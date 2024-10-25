@@ -1,12 +1,11 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "drivers/led.h"
 #include "drivers/buzzer.h"
 #include "drivers/uart.h"
 #include "system/messages.h"
 #include "system/metrics.h"
 
-static char* response_pattern = NULL;
+static char* response_message = NULL;
 
 void handle_serial_input(void)
 {
@@ -21,12 +20,12 @@ void handle_serial_input(void)
     {
         case 'L':
         case 'l':
-            response_pattern = led_toggle_enable_flag() ? LED_ENABLED : LED_DISABLED;
+            response_message = led_toggle_enable_flag() ? serial_pattern_led_enabled : serial_pattern_led_disabled;
             break;
 
         case 'B':
         case 'b':
-            response_pattern = buzzer_toggle_enable_flag() ? BUZZER_ENABLED : BUZZER_DISABLED;
+            response_message = buzzer_toggle_enable_flag() ? serial_pattern_buzzer_enabled : serial_pattern_buzzer_disabled;
             break;
 
         case '\r':
@@ -34,10 +33,10 @@ void handle_serial_input(void)
             return;
         
         default:
-            response_pattern = UNKNOWN;
+            response_message = serial_pattern_unknown;
             break;
     }
 
-    sprintf(text_buffer_serial, response_pattern, (mcu_operating_time / 10));
+    text_buffer_serial = response_message;
     uart_add_to_buffer(text_buffer_serial);
 }

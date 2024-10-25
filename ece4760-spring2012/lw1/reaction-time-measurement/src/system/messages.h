@@ -1,30 +1,30 @@
 #ifndef MESSAGES_H_
 #define MESSAGES_H_
 
-#define READY_SERIAL_PATTERN        "%010lums-READY\r\n"
-#define READY_LCD_PATTERN           "\b\r  Best result:\n%3u.%ums"
+extern char* text_buffer_lcd;
+extern char* text_buffer_serial;
 
-#define WAIT_SERIAL_PATTERN         "%010lums-WAIT: %u.%ums\r\n"
-#define WAIT_LCD_MESSAGE            "\b\r    Wait for\n  the signal..."
+extern char* lcd_pattern_ready;
+extern char* lcd_pattern_wait;
+extern char* lcd_pattern_timeout;
+extern char* lcd_pattern_false_start;
+extern char* lcd_pattern_result;
+      
+extern char* serial_pattern_ready;
+extern char* serial_pattern_wait;
+extern char* serial_pattern_timeout;
+extern char* serial_pattern_false_start;
+extern char* serial_pattern_result;
 
-#define TIMEOUT_SERIAL_PATTERN      "%010lums-TIMEOUT\r\n"
-#define TIMEOUT_LCD_MESSAGE         "\b\r    Timeout!\n   Try again!"
+extern char* serial_pattern_led_enabled;
+extern char* serial_pattern_led_disabled;
+extern char* serial_pattern_buzzer_enabled;
+extern char* serial_pattern_buzzer_disabled;
+extern char* serial_pattern_unknown;
 
-#define FALSE_START_SERIAL_PATTERN  "%010lums-FALSE START\r\n"
-#define FALSE_START_LCD_MESSAGE     "\b\r  False start!\n   Try again!"
-
-#define RESULT_SERIAL_PATTERN       "%010lums-RESULT %u.%ums\r\n"
-#define RESULT_LCD_PATTERN          "\b\r  Your result:\n%3u.%ums"
-
-#define LED_ENABLED                 "%010lums-LED ENABLED\r\n"
-#define LED_DISABLED                "%010lums-LED DISABLED\r\n"
-#define BUZZER_ENABLED              "%010lums-BUZZER ENABLED\r\n"
-#define BUZZER_DISABLED             "%010lums-BUZZER DISABLED\r\n"
-#define UNKNOWN                     "%010lums-UNKNOWN\r\n"
-
-extern char text_buffer_lcd[33];
-extern char text_buffer_serial[40];
 
 void init_messages(void);
+char* get_serial_wait_message(void);
+char* get_lcd_result_message(void);
 
 #endif /* MESSAGES_H_ */
