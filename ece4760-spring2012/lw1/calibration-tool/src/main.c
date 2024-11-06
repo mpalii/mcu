@@ -16,7 +16,10 @@ ISR (INT0_vect)
 {    
     // GPIO_LOW(LED);
 
-    _delay_ms(40);
+    _delay_ms(128);
+    // _delay_ms(40);
+    // _delay_ms(4.4);
+    // _delay_us(8);
     GPIO_LOW(BUTTON_TRIGGER);
     _delay_ms(200);
     GPIO_HIGH(BUTTON_TRIGGER);
