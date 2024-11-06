@@ -7,6 +7,7 @@
 #include "drivers/lcd.h"
 #include "drivers/system_timer.h"
 #include "drivers/buzzer.h"
+#include "drivers/reaction_timer.h"
 #include "system/messages.h"
 #include "system/metrics.h"
 #include "system/scheduler.h"
@@ -31,6 +32,7 @@ static inline void init_system(void)
     init_lcd();
     init_system_timer();
     init_buzzer();
+    init_reaction_timer();
 
     // Init metrics/statistics and messages
     init_metrics();

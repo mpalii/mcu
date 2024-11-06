@@ -5,7 +5,7 @@ DEVICE      = atmega644
 PARTNUMBER  = m644
 PROGRAMMER  = usbasp
 INCLUDES	= $(addprefix -I, ./src/)
-DEFINES	    = $(addprefix -D, F_CPU=20000000ULL BAUD_RATE=9600UL U2X DEFAULT_SCORE=9999UL SCORE_EEPROM_ADDRESS=0x0000)
+DEFINES	    = $(addprefix -D, F_CPU=16000000ULL BAUD_RATE=9600UL U2X DEFAULT_SCORE=62499UL SCORE_EEPROM_ADDRESS=0x0000)
 
 # Utilities
 AVRDUDE     = avrdude -c $(PROGRAMMER) -p $(PARTNUMBER)
@@ -27,6 +27,7 @@ SOURCES = 									\
 	src/drivers/system_timer.c				\
 	src/drivers/buzzer.c					\
 	src/drivers/eeprom.c					\
+	src/drivers/reaction_timer.c			\
 											\
 	src/system/launcher.c					\
 	src/system/metrics.c					\

@@ -11,9 +11,9 @@
 #include "system/task/eeprom_writer.h"
 #include "system/task/serial_input_handler.h"
 
-#define TASK_TIME_BUTTON_HANDLING           (150)
-#define TASK_TIME_LCD_RENDERING             (10)
-#define TASK_TIME_SYSTEM_STATE_RESOLVING    (100)
+#define TASK_TIME_BUTTON_HANDLING           (35)
+#define TASK_TIME_LCD_RENDERING             (1)
+#define TASK_TIME_SYSTEM_STATE_RESOLVING    (1)
 #define TASK_TIME_SERIAL_WRITING            (1)
 #define TASK_TIME_EEPROM_WRITING            (1)
 #define TASK_TIME_SERIAL_READING            (1)
@@ -61,7 +61,7 @@ void launch_scheduler(void)
 
         if (task_time_system_state_resolving == 0)
         {
-            task_time_system_state_resolving = fast_track_mode ? 1 : TASK_TIME_SYSTEM_STATE_RESOLVING;
+            task_time_system_state_resolving = TASK_TIME_SYSTEM_STATE_RESOLVING;
             resolve_state();
         }
 

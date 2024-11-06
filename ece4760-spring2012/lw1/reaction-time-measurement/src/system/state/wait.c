@@ -1,6 +1,4 @@
-#include "drivers/buzzer.h"
 #include "drivers/lcd.h"
-#include "drivers/led.h"
 #include "system/events.h"
 #include "system/messages.h"
 #include "system/metrics.h"
@@ -21,8 +19,6 @@ e_state handle_wait_state(void)
 
     if (delay == 0)
     {
-        led_on();
-        buzzer_on();
         return MEASURING;
     }
 

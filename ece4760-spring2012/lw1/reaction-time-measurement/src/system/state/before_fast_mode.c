@@ -4,7 +4,7 @@
 #include "system/state_machine.h"
 #include "system/metrics.h"
 
-#define REPEAT_NUMBER   (20)
+#define REPEAT_NUMBER   (200)
 
 static int8_t repeat_number = REPEAT_NUMBER;
 
@@ -17,7 +17,7 @@ e_state handle_before_fast_mode_state(void)
     }
 
     srand((unsigned int) mcu_operating_time);
-    delay = 10000 + (rand() % 55535);
+    delay = 1000 + (rand() % 5535);
     fast_track_mode = true;
     user_reaction_time = 0;
 
