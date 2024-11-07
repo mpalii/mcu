@@ -21,12 +21,16 @@ void handle_serial_input(void)
     {
         case 'L':
         case 'l':
-            response_message = led_toggle_enable_flag() ? serial_pattern_led_enabled : serial_pattern_led_disabled;
+            response_message = led_toggle_enable_flag() 
+                ? serial_pattern_led_enabled 
+                : serial_pattern_led_disabled;
             break;
 
         case 'B':
         case 'b':
-            response_message = buzzer_toggle_enable_flag() ? serial_pattern_buzzer_enabled : serial_pattern_buzzer_disabled;
+            response_message = buzzer_toggle_enable_flag() 
+                ? serial_pattern_buzzer_enabled 
+                : serial_pattern_buzzer_disabled;
             break;
 
         case '\r':

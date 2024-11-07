@@ -14,8 +14,6 @@
     #define BAUD_RATE_RATIO 16UL
 #endif
 
-#define BUFFER_SIZE     (9)
-
 #include <stdbool.h>
 #include <stdlib.h>
 #include "gpio.h"
