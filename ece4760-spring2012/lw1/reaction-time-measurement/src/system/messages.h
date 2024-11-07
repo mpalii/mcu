@@ -1,8 +1,8 @@
 #ifndef MESSAGES_H_
 #define MESSAGES_H_
 
-extern char* text_buffer_lcd;
-extern char* text_buffer_serial;
+extern char text_buffer_lcd[33];
+extern char text_buffer_serial[40];
 
 extern char* lcd_pattern_ready;
 extern char* lcd_pattern_wait;
@@ -24,7 +24,5 @@ extern char* serial_pattern_unknown;
 
 
 void init_messages(void);
-char* get_serial_wait_message(void);
-char* get_lcd_result_message(void);
 
 #endif /* MESSAGES_H_ */

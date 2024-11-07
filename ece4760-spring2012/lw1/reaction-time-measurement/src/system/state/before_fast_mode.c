@@ -16,8 +16,8 @@ e_state handle_before_fast_mode_state(void)
         return BEFORE_FAST_MODE;
     }
 
-    srand((unsigned int) mcu_operating_time);
-    delay = 1000 + (rand() % 5535);
+    srand((unsigned int) random_seed);
+    delay = 1535 + (rand() % 64000);
     fast_track_mode = true;
     user_reaction_time = 0;
 

@@ -3,14 +3,14 @@
 #include "drivers/reset.h"
 #include "drivers/uart.h"
 
-volatile uint32_t mcu_operating_time;
+volatile uint32_t random_seed;
 uint16_t user_reaction_time;
 uint16_t delay;
 uint16_t high_score;
 
 void init_metrics(void)
 {
-    mcu_operating_time = 0;
+    random_seed = 0;
     user_reaction_time = 0;
     delay = 0;
     high_score = eeprom_read_word(SCORE_EEPROM_ADDRESS);

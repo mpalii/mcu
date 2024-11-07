@@ -1,4 +1,5 @@
 #include <avr/interrupt.h>
+#include <stdio.h>
 #include "drivers/gpio.h"
 #include "drivers/buzzer.h"
 #include "drivers/eeprom.h"
@@ -35,9 +36,9 @@ e_state handle_measuring_state(void)
 
     if (timeout)
     {
-        timeout = false;    
-        text_buffer_serial = serial_pattern_timeout;
-        text_buffer_lcd = lcd_pattern_timeout;
+        timeout = false;
+        sprintf(text_buffer_serial, serial_pattern_timeout);
+        sprintf(text_buffer_lcd, lcd_pattern_timeout);
 
         return PRE_READY; // NO NEED for stabilization
     }
@@ -48,8 +49,10 @@ e_state handle_measuring_state(void)
         eeprom_save_score(high_score);
     }
 
-    text_buffer_serial = serial_pattern_result;
-    text_buffer_lcd = get_lcd_result_message();
+    uint16_t user_reaction_time_ms = (((uint32_t) user_reaction_time) * 16) / 1000;
+    uint16_t user_reaction_time_us = (((uint32_t) user_reaction_time) * 16) % 1000;
+    sprintf(text_buffer_lcd, lcd_pattern_result, user_reaction_time_ms, user_reaction_time_us);
+    sprintf(text_buffer_serial, serial_pattern_result, user_reaction_time);
 
     return AFTER_FAST_MODE;
 

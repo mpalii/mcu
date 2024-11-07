@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "drivers/lcd.h"
 #include "system/events.h"
 #include "system/messages.h"
@@ -11,8 +12,8 @@ e_state handle_wait_state(void)
         button_event = false;
         fast_track_mode = false;
 
-        text_buffer_serial = serial_pattern_false_start;
-        text_buffer_lcd = lcd_pattern_false_start;
+        sprintf(text_buffer_serial, serial_pattern_false_start);
+        sprintf(text_buffer_lcd, lcd_pattern_false_start);
 
         return AFTER_FAST_MODE;     // stabilization needs
     }

@@ -27,7 +27,7 @@ static volatile uint8_t task_time_serial_reading = TASK_TIME_SERIAL_READING;
 
 ISR (TIMER0_COMPA_vect)
 {
-    mcu_operating_time++;
+    random_seed++;
     if (task_time_button_handling           > 0)    --task_time_button_handling;
     else _gpio_high(DEADLINE_IND);
     if (task_time_lcd_rendering             > 0)    --task_time_lcd_rendering;

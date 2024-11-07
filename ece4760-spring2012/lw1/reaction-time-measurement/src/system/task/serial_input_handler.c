@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "drivers/led.h"
 #include "drivers/buzzer.h"
 #include "drivers/uart.h"
@@ -37,6 +38,6 @@ void handle_serial_input(void)
             break;
     }
 
-    text_buffer_serial = response_message;
+    sprintf(text_buffer_serial, response_message);
     uart_add_to_buffer(text_buffer_serial);
 }
