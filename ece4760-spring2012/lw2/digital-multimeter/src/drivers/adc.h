@@ -21,6 +21,10 @@
 #define R_1KOHM                             (997UL)     // VC61A 2k
 #define OHMMETER_1KOHM                      (R_1KOHM + R_INT_1KOHM)
 
+#define R_INT_10KOHM                        (4UL)       // aka 42.7 ohm
+#define R_10KOHM                            (1006UL)    // VC61A 20k
+#define OHMMETER_10KOHM                     (R_10KOHM + R_INT_10KOHM)
+
 void init_adc(void);
 void set_alt_adc_channel(uint8_t);
 uint16_t get_vcc_conversion_result(void);

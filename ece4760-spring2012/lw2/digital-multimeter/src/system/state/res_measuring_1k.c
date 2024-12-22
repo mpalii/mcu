@@ -13,12 +13,15 @@ e_state handle_res_1k_measuring(void)
     if (button_event)
     {
         button_event = false;
-        set_alt_adc_channel(ADC_CHANNEL_1);
+        // disable ohmmeter 1k power line
         _gpio_low(OHMMETER_1K);
         _gpio_set_input(OHMMETER_1K);
+        // enable ohmmeter 10k power line
+        _gpio_set_output(OHMMETER_10K);
+        _gpio_high(OHMMETER_10K);
 
         lcd_add_to_rendering("\b");
-        return VCC_MEASURING;
+        return RES_MEASURING_10K;
     }
 
     uint16_t vcc_conversion_result = get_vcc_conversion_result();

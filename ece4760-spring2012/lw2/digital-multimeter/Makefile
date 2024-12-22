@@ -35,6 +35,7 @@ SOURCES = 									\
 											\
 	src/system/state/vcc_measuring.c		\
 	src/system/state/res_measuring_1k.c		\
+	src/system/state/res_measuring_10k.c	\
 
 # Object files
 OBJECTS = $(patsubst src/%.c, target/%.o, $(SOURCES))
