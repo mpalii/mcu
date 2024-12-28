@@ -1,8 +1,8 @@
 # Makefile
 # Properties
 DESTINATION = firmware
-DEVICE      = atmega644
-PARTNUMBER  = m644
+DEVICE      = atmega1284
+PARTNUMBER  = m1284
 PROGRAMMER  = usbasp
 INCLUDES	= $(addprefix -I, ./src/)
 DEFINES	    = $(addprefix -D, F_CPU=18432000ULL)
@@ -36,6 +36,7 @@ SOURCES = 									\
 	src/system/state/vcc_measuring.c		\
 	src/system/state/res_measuring_1k.c		\
 	src/system/state/res_measuring_10k.c	\
+	src/system/state/vol_measuring.c		\
 
 # Object files
 OBJECTS = $(patsubst src/%.c, target/%.o, $(SOURCES))
@@ -73,9 +74,6 @@ size:	./target/$(DESTINATION).elf
 
 fuses-default:
 	@$(AVRDUDE) -U lfuse:w:0x62:m -U hfuse:w:0x99:m -U efuse:w:0xff:m 
-
-fuses-no-divider-int-rc:
-	@$(AVRDUDE) -U lfuse:w:0xe2:m -U hfuse:w:0x99:m -U efuse:w:0xff:m 
 
 fuses-no-divider-ext-clk:
 	@$(AVRDUDE) -U lfuse:w:0xf7:m -U hfuse:w:0x99:m -U efuse:w:0xff:m

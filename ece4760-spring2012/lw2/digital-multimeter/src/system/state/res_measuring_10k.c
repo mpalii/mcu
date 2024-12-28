@@ -13,17 +13,25 @@ e_state handle_res_10k_measuring(void)
     if (button_event)
     {
         button_event = false;
-        set_alt_adc_channel(ADC_CHANNEL_1);
+        // set_alt_adc_channel(ADC_CHANNEL_1);
         // disable ohmmeter 10k power line
         _gpio_low(OHMMETER_10K);
         _gpio_set_input(OHMMETER_10K);
 
         lcd_add_to_rendering("\b");
-        return VCC_MEASURING;
+        return VOL_MEASURING;
     }
 
     uint16_t vcc_conversion_result = get_vcc_conversion_result();
     uint16_t alt_conversion_result = get_alt_conversion_result();
+
+    // if (alt_conversion_result < 180)
+    // {
+    //     sprintf(text_buffer_lcd_3, "\r2.Ohmmeter 10k\xF4\n%04u:%04u   LOW\xF4", vcc_conversion_result, alt_conversion_result);
+    //     lcd_add_to_rendering(text_buffer_lcd_3);
+
+    //     return RES_MEASURING_10K;
+    // }
 
     if (alt_conversion_result > 999)
     {
@@ -38,6 +46,7 @@ e_state handle_res_10k_measuring(void)
 
     uint16_t dif_mv = vcc_mv - alt_mv;
     uint16_t resistance = (((uint32_t) OHMMETER_10KOHM) * alt_mv) / dif_mv;
+    resistance /= 10;
 
     sprintf(text_buffer_lcd_3, "\r2.Ohmmeter 10k\xF4\n%04u:%04u %2u.%02uk", vcc_conversion_result, alt_conversion_result, resistance / 100, resistance % 100);
     lcd_add_to_rendering(text_buffer_lcd_3);
