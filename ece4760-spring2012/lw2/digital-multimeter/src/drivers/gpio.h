@@ -64,7 +64,7 @@ void init_gpio(void);
 
 #define OHMMETER_1K             _PB0
 #define OHMMETER_10K            _PB1
-#define _GPIO_UNUSED_11         _PB2
+#define OHMMETER_100K           _PB2
 #define _GPIO_UNUSED_12         _PB3
 #define _GPIO_UNUSED_13         _PB4
 #define _GPIO_UNUSED_14         _PB5
