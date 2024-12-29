@@ -5,8 +5,7 @@ typedef enum
 {
     VCC_MEASURING,
     RES_MEASURING_1K,
-    RES_MEASURING_10K,
-    VOL_MEASURING
+    RES_MEASURING_10K
 } e_state;
 
 void handle_device_state(void);

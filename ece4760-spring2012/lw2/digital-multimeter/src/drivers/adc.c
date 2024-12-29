@@ -7,10 +7,10 @@
 #define ADC_REF_110     (_BV(REFS1))
 #define ADC_REF_VCC     (_BV(REFS0))
 
-#define WINDOW_SIZE (512)
+#define WINDOW_SIZE (256)
 
 static volatile bool is_vcc_measuring = true;
-static volatile uint8_t alt_channel = ADC_CHANNEL_1;
+static volatile uint8_t alt_channel = ADC_CHANNEL_2;
 static volatile uint8_t alt_refference = ADC_REF_256;
 
 static uint16_t vcc_measuring_window_buffer[WINDOW_SIZE] = { 0, };
@@ -80,13 +80,13 @@ void init_adc(void)
 
 uint16_t get_vcc_conversion_result(void)
 {
-    return (uint16_t) (vcc_buffer_summ / WINDOW_SIZE);
+    return (uint16_t) (vcc_buffer_summ / WINDOW_SIZE) + ADC_OFFSET_CORRECTION;
 }
 
 
 uint16_t get_alt_conversion_result(void)
 {
-    return (uint16_t) (alt_buffer_summ / WINDOW_SIZE);
+    return (uint16_t) (alt_buffer_summ / WINDOW_SIZE) + ADC_OFFSET_CORRECTION;
 }
 
 
