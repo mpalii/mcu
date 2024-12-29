@@ -80,13 +80,13 @@ void init_adc(void)
 
 uint16_t get_vcc_conversion_result(void)
 {
-    return (uint16_t) (vcc_buffer_summ / WINDOW_SIZE) + ADC_OFFSET_CORRECTION;
+    return (uint16_t) (vcc_buffer_summ / WINDOW_SIZE);
 }
 
 
 uint16_t get_alt_conversion_result(void)
 {
-    return (uint16_t) (alt_buffer_summ / WINDOW_SIZE) + ADC_OFFSET_CORRECTION;
+    return (uint16_t) (alt_buffer_summ / WINDOW_SIZE);
 }
 
 

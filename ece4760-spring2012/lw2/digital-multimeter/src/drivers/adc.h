@@ -10,7 +10,7 @@
 #define ADC_CHANNEL_6   (6)
 #define ADC_CHANNEL_7   (7)
 
-#define ADC_OFFSET_CORRECTION   (3)
+#define ADC_OFFSET_CORRECTION   (35)                    // AKA 3.5 bits!
 
 #define INTERNAL_VOLTAGE_REFERENCE_1_10_MV  (1085UL)    // VC61A 2V
 #define INTERNAL_VOLTAGE_REFERENCE_2_56_MV  (2520UL)    // VC61A 20V

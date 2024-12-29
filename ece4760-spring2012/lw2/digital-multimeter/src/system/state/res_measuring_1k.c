@@ -35,8 +35,8 @@ e_state handle_res_1k_measuring(void)
         return RES_MEASURING_1K;
     }
 
-    uint16_t vcc_mv = ((uint32_t) vcc_conversion_result * INTERNAL_VOLTAGE_REFERENCE_2_56_MV * VOLTAGE_DIVIDER_IMPEDANCE) / (((uint32_t) 1024) * VOLTAGE_DIVIDER_RESISTOR_2_HOHM);
-    uint16_t alt_mv = ((uint32_t) alt_conversion_result * INTERNAL_VOLTAGE_REFERENCE_2_56_MV) / ((uint32_t) 1024);
+    uint16_t vcc_mv = (((uint32_t) vcc_conversion_result * 10 + ADC_OFFSET_CORRECTION) * INTERNAL_VOLTAGE_REFERENCE_2_56_MV * VOLTAGE_DIVIDER_IMPEDANCE) / (((uint32_t) 10240) * VOLTAGE_DIVIDER_RESISTOR_2_HOHM);
+    uint16_t alt_mv = (((uint32_t) alt_conversion_result * 10 + ADC_OFFSET_CORRECTION) * INTERNAL_VOLTAGE_REFERENCE_2_56_MV) / ((uint32_t) 10240);
 
     uint16_t dif_mv = vcc_mv - alt_mv;
     uint16_t resistance = (((uint32_t) OHMMETER_1KOHM) * alt_mv) / dif_mv;
