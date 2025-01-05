@@ -23,7 +23,8 @@ e_state handle_vcc_measuring(void)
 
     uint16_t vcc_conversion_result = get_vcc_conversion_result();
     uint16_t alt_conversion_result = get_alt_conversion_result();
-    uint16_t millivolts = (((uint32_t) vcc_conversion_result * 10 + ADC_OFFSET_CORRECTION) * INTERNAL_VOLTAGE_REFERENCE_2_56_MV * VOLTAGE_DIVIDER_IMPEDANCE) / (((uint32_t) 10240) * VOLTAGE_DIVIDER_RESISTOR_2_HOHM);
+
+    uint16_t millivolts = map_to_millivolts(vcc_conversion_result) * VOLTAGE_DIVIDER_IMPEDANCE / VOLTAGE_DIVIDER_RESISTOR_2_HOHM;
     uint16_t centivolts = millivolts / 10;
 
     sprintf(text_buffer_lcd, "\r0.Supply voltage\n%04u:%04u  %1d.%02dV", vcc_conversion_result, alt_conversion_result, centivolts / 100, centivolts % 100);

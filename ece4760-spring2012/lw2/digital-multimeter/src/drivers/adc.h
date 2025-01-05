@@ -10,13 +10,8 @@
 #define ADC_CHANNEL_6   (6)
 #define ADC_CHANNEL_7   (7)
 
-#define ADC_OFFSET_CORRECTION   (35)                    // AKA 3.5 bits!
-
-#define INTERNAL_VOLTAGE_REFERENCE_1_10_MV  (1085UL)    // VC61A 2V
-#define INTERNAL_VOLTAGE_REFERENCE_2_56_MV  (2520UL)    // VC61A 20V
-
-#define VOLTAGE_DIVIDER_RESISTOR_1_HOHM     (98UL)      // VC61A 200k
-#define VOLTAGE_DIVIDER_RESISTOR_2_HOHM     (45UL)      // VC61A 200k
+#define VOLTAGE_DIVIDER_RESISTOR_1_HOHM     (9900ULL)   // VC61A 200k
+#define VOLTAGE_DIVIDER_RESISTOR_2_HOHM     (4590ULL)   // VC61A 200k
 #define VOLTAGE_DIVIDER_IMPEDANCE           (VOLTAGE_DIVIDER_RESISTOR_1_HOHM + VOLTAGE_DIVIDER_RESISTOR_2_HOHM)
 
 #define R_INT_1KOHM                         (30UL)
@@ -35,6 +30,7 @@ void init_adc(void);
 void set_alt_adc_channel(uint8_t);
 uint16_t get_vcc_conversion_result(void);
 uint16_t get_alt_conversion_result(void);
+float map_to_millivolts(uint16_t);
 
 
 #endif /* ADC_H_ */

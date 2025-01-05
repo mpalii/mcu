@@ -35,11 +35,11 @@ e_state handle_res_10k_measuring(void)
         return RES_MEASURING_10K;
     }
 
-    uint16_t vcc_mv = (((uint32_t) vcc_conversion_result * 10 + ADC_OFFSET_CORRECTION) * INTERNAL_VOLTAGE_REFERENCE_2_56_MV * VOLTAGE_DIVIDER_IMPEDANCE) / (((uint32_t) 10240) * VOLTAGE_DIVIDER_RESISTOR_2_HOHM);
-    uint16_t alt_mv = (((uint32_t) alt_conversion_result * 10 + ADC_OFFSET_CORRECTION) * INTERNAL_VOLTAGE_REFERENCE_2_56_MV) / ((uint32_t) 10240);
+    float vcc_mv = map_to_millivolts(vcc_conversion_result) * VOLTAGE_DIVIDER_IMPEDANCE / VOLTAGE_DIVIDER_RESISTOR_2_HOHM;
+    float alt_mv = map_to_millivolts(alt_conversion_result);
 
-    uint16_t dif_mv = vcc_mv - alt_mv;
-    uint16_t resistance = (((uint32_t) OHMMETER_10KOHM) * alt_mv) / dif_mv;
+    float dif_mv = vcc_mv - alt_mv;
+    uint16_t resistance = (uint16_t) ((OHMMETER_10KOHM * alt_mv) / dif_mv);
     resistance /= 10;
 
     sprintf(text_buffer_lcd_3, "\r2.Ohmmeter 10k\xF4\n%04u:%04u %2u.%02uk", vcc_conversion_result, alt_conversion_result, resistance / 100, resistance % 100);
