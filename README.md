@@ -25,3 +25,6 @@ To prepare VSC for working with avr-toolchai:
 - add *__AVR_ATmega328P__* to 'Defines' section  
 #### 4. Atmel/Microchip Studio line numbers  
 To show line numbers in A/M Studio go to **'Tools' -> 'Options' -> 'Text Editor' -> 'All Language'** and toggle **Line numbers** checkbox in the **Settings** section  
+
+// TODO
+https://avrdudes.github.io/avr-libc/avr-libc-user-manual/install_tools.html
