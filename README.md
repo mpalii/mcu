@@ -27,4 +27,7 @@ To prepare VSC for working with avr-toolchai:
 To show line numbers in A/M Studio go to **'Tools' -> 'Options' -> 'Text Editor' -> 'All Language'** and toggle **Line numbers** checkbox in the **Settings** section  
 
 // TODO
-https://avrdudes.github.io/avr-libc/avr-libc-user-manual/install_tools.html
+https://avrdudes.github.io/avr-libc/avr-libc-user-manual/install_tools.html  
+https://kleinembedded.com/stm32-without-cubeide-part-1-the-bare-necessities/#comment-37  
+https://www.youtube.com/watch?v=7YhRFx-oyW4&list=PL3BR09unfgchRxdDws74aY4mlSk9eYGEs  
+https://www.youtube.com/watch?v=MhOba73z-dQ&pp=ygUMYXJ0ZnVsIGJ5dGVz  
